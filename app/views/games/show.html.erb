@@ -3,6 +3,21 @@
 <div class="tweet">
   <p><%= @game.body %></p>
   <p><%= @game.created_at %></p>
+  <%= link_to "編集する", edit_game_path(@game.id) %>
+
+  <% if user_signed_in? %>
+      <% if current_user.already_liked?(@game) %>
+          <%= link_to game_like_path(@game), method: :delete do %>
+             <p>いいねを取り消す</p><%= @game.likes.count %>
+          <% end %>
+      <% else %>
+          <%= link_to game_likes_path(@game), method: :post do %>
+             <p>いいね</p><%= @game.likes.count %>
+          <% end %>
+      <% end %>
+  <% else %>
+      <p>いいねの数 = </p><%= @game.likes.count %>
+  <% end %>
 </div>
 
-<%= link_to "Tweet一覧に戻る", games_path %>
+<%= link_to "Tweet一覧に戻る", root_path %>

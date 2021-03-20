@@ -169,3 +169,1167 @@ Processing by GamesController#index as HTML
 Completed 200 OK in 1707ms (Views: 1668.1ms | ActiveRecord: 14.1ms | Allocations: 10110)
 
 
+Started GET "/games/index" for ::1 at 2021-03-20 14:53:08 +0900
+  [1m[35m (27.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (10.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (4.0ms)[0m  [1m[34mSELECT `games`.* FROM `games`[0m
+  ↳ app/views/games/index.html.erb:4
+  Rendered games/index.html.erb within layouts/application (Duration: 98.6ms | Allocations: 4801)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 272ms (Views: 158.7ms | ActiveRecord: 77.3ms | Allocations: 14546)
+
+
+Started GET "/games/index" for ::1 at 2021-03-20 14:58:26 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (32.0ms)[0m  [1m[34mSELECT `games`.* FROM `games`[0m
+  ↳ app/views/games/index.html.erb:4
+  Rendered games/index.html.erb within layouts/application (Duration: 425.1ms | Allocations: 5827)
+Completed 500 Internal Server Error in 476ms (ActiveRecord: 219.8ms | Allocations: 7366)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1)):
+     6:       <%= g.body %>
+     7:       <%= g.created_at %>
+     8:       <%= link_to "詳細へ", game_path(g.id) %>
+     9:       <%= link_to "編集する", edit_game_path(t.id) %>
+    10:     </div>
+    11:   <% end %>
+    12: </div>
+  
+app/views/games/index.html.erb:9
+app/views/games/index.html.erb:4
+Started GET "/games/index" for ::1 at 2021-03-20 14:59:13 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (6.3ms)[0m  [1m[34mSELECT `games`.* FROM `games`[0m
+  ↳ app/views/games/index.html.erb:4
+  Rendered games/index.html.erb within layouts/application (Duration: 78.8ms | Allocations: 995)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 883ms (Views: 300.5ms | ActiveRecord: 6.3ms | Allocations: 6554)
+
+
+Started GET "/games/1/edit" for ::1 at 2021-03-20 14:59:25 +0900
+Processing by GamesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (2.8ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:22:in `edit'
+  Rendering games/edit.html.erb within layouts/application
+  Rendered games/edit.html.erb within layouts/application (Duration: 170.6ms | Allocations: 2372)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 382ms (Views: 256.0ms | ActiveRecord: 2.8ms | Allocations: 10472)
+
+
+Started GET "/games/1/edit" for ::1 at 2021-03-20 15:02:20 +0900
+Processing by GamesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (1.4ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:22:in `edit'
+  Rendering games/edit.html.erb within layouts/application
+  Rendered games/edit.html.erb within layouts/application (Duration: 8.8ms | Allocations: 666)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 311ms (Views: 165.1ms | ActiveRecord: 98.8ms | Allocations: 10577)
+
+
+Started PATCH "/games/1" for ::1 at 2021-03-20 15:02:23 +0900
+Processing by GamesController#update as HTML
+  Parameters: {"authenticity_token"=>"y2DiqWWXKJqOemP7sbRhCbO9KLuEDZnlaEPFHH80e1eBhC2iYtr5nRD5iDzvb5hpErKU4Nc6wStpj4fAHO+rNQ==", "game"=>{"body"=>"カロン"}, "commit"=>"編集する", "id"=>"1"}
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms | Allocations: 2172)
+
+
+  
+NameError (uninitialized constant GamesController::Tweet):
+  
+app/controllers/games_controller.rb:26:in `update'
+Started GET "/games/1" for ::1 at 2021-03-20 15:03:06 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (21.1ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:6:in `show'
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (Duration: 104.3ms | Allocations: 231)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 532ms (Views: 235.6ms | ActiveRecord: 257.8ms | Allocations: 9455)
+
+
+Started GET "/games" for ::1 at 2021-03-20 15:03:12 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/games"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/games/1" for ::1 at 2021-03-20 15:03:28 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (1.3ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:6:in `show'
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 73)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 86ms (Views: 73.8ms | ActiveRecord: 1.3ms | Allocations: 5267)
+
+
+Started GET "/games/index" for ::1 at 2021-03-20 15:03:29 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT `games`.* FROM `games`[0m
+  ↳ app/views/games/index.html.erb:4
+  Rendered games/index.html.erb within layouts/application (Duration: 63.0ms | Allocations: 1139)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 150ms (Views: 145.3ms | ActiveRecord: 0.7ms | Allocations: 5852)
+
+
+Started GET "/games/1" for ::1 at 2021-03-20 15:03:35 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.8ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:6:in `show'
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 74)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 62ms (Views: 55.5ms | ActiveRecord: 0.8ms | Allocations: 5267)
+
+
+Started GET "/games" for ::1 at 2021-03-20 15:03:36 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/games"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/games/1" for ::1 at 2021-03-20 15:03:39 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (2.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:6:in `show'
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 73)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 76ms (Views: 68.0ms | ActiveRecord: 2.7ms | Allocations: 5262)
+
+
+Started GET "/games/index" for ::1 at 2021-03-20 15:03:40 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT `games`.* FROM `games`[0m
+  ↳ app/views/games/index.html.erb:4
+  Rendered games/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 900)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 78ms (Views: 76.2ms | ActiveRecord: 0.7ms | Allocations: 5482)
+
+
+Started POST "/games" for ::1 at 2021-03-20 15:03:46 +0900
+Processing by GamesController#create as HTML
+  Parameters: {"authenticity_token"=>"tC3YDtP1P5d+FeujA3i8BvR5Qvco3OsvvSmJEqYrdEz+yRcF1LjukOCWAGRdo0VmVXb+rHvrs+G85cvOxfCkLg==", "game"=>{"body"=>"カロン"}, "commit"=>"投稿する"}
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:14:in `create'
+  [1m[36mGame Create (15.0ms)[0m  [1m[32mINSERT INTO `games` (`body`, `created_at`, `updated_at`) VALUES ('カロン', '2021-03-20 06:03:47.217684', '2021-03-20 06:03:47.217684')[0m
+  ↳ app/controllers/games_controller.rb:14:in `create'
+  [1m[35m (11.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:14:in `create'
+Redirected to http://localhost:3000/games/index
+Completed 302 Found in 80ms (ActiveRecord: 27.6ms | Allocations: 3311)
+
+
+Started GET "/games/index" for ::1 at 2021-03-20 15:03:47 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (6.7ms)[0m  [1m[34mSELECT `games`.* FROM `games`[0m
+  ↳ app/views/games/index.html.erb:4
+  Rendered games/index.html.erb within layouts/application (Duration: 13.1ms | Allocations: 1126)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 94ms (Views: 85.0ms | ActiveRecord: 6.7ms | Allocations: 5718)
+
+
+Started GET "/games/1" for ::1 at 2021-03-20 15:03:51 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:6:in `show'
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 73)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 60ms (Views: 55.4ms | ActiveRecord: 0.7ms | Allocations: 5270)
+
+
+Started GET "/games" for ::1 at 2021-03-20 15:03:53 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/games"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/games/1" for ::1 at 2021-03-20 15:03:56 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.8ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:6:in `show'
+  Rendering games/show.html.erb within layouts/application
+  Rendered games/show.html.erb within layouts/application (Duration: 1.5ms | Allocations: 73)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 79ms (Views: 69.6ms | ActiveRecord: 0.8ms | Allocations: 5268)
+
+
+Started GET "/games/1/edit" for ::1 at 2021-03-20 15:03:58 +0900
+Processing by GamesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:22:in `edit'
+  Rendering games/edit.html.erb within layouts/application
+  Rendered games/edit.html.erb within layouts/application (Duration: 1.9ms | Allocations: 482)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 64ms (Views: 59.1ms | ActiveRecord: 0.6ms | Allocations: 5679)
+
+
+Started GET "/games" for ::1 at 2021-03-20 15:06:51 +0900
+  [1m[35m (14.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/games"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/games/index" for ::1 at 2021-03-20 15:11:08 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (8.4ms)[0m  [1m[34mSELECT `games`.* FROM `games`[0m
+  ↳ app/views/games/index.html.erb:4
+  Rendered games/index.html.erb within layouts/application (Duration: 116.0ms | Allocations: 5147)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 295ms (Views: 196.5ms | ActiveRecord: 84.1ms | Allocations: 14244)
+
+
+Started GET "/games/index" for ::1 at 2021-03-20 15:13:42 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (4.3ms)[0m  [1m[34mSELECT `games`.* FROM `games`[0m
+  ↳ app/views/games/index.html.erb:9
+  Rendered games/index.html.erb within layouts/application (Duration: 178.5ms | Allocations: 1980)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 776ms (Views: 765.2ms | ActiveRecord: 4.3ms | Allocations: 7485)
+
+
+Started GET "/games/index" for ::1 at 2021-03-20 15:24:06 +0900
+Started GET "/games/index" for ::1 at 2021-03-20 15:24:07 +0900
+Started GET "/games/index" for ::1 at 2021-03-20 15:24:07 +0900
+Started GET "/games/index" for ::1 at 2021-03-20 15:24:07 +0900
+Started GET "/games/index" for ::1 at 2021-03-20 15:24:07 +0900
+  [1m[35m (25.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (39.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (39.9ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (38.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (41.1ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (6.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (100.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (113.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (103.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GamesController#index as HTML
+Processing by GamesController#index as HTML
+Processing by GamesController#index as HTML
+Processing by GamesController#index as HTML
+  [1m[35m (35.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  Rendering games/index.html.erb within layouts/application
+  Rendering games/index.html.erb within layouts/application
+  Rendering games/index.html.erb within layouts/application
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (Duration: 80.8ms | Allocations: 3563)
+Completed 500 Internal Server Error in 214ms (ActiveRecord: 0.0ms | Allocations: 13508)
+
+
+  Rendered games/index.html.erb within layouts/application (Duration: 89.2ms | Allocations: 5475)
+  Rendered games/index.html.erb within layouts/application (Duration: 92.7ms | Allocations: 6895)
+Completed 500 Internal Server Error in 309ms (ActiveRecord: 0.0ms | Allocations: 16414)
+
+
+  Rendered games/index.html.erb within layouts/application (Duration: 85.7ms | Allocations: 4997)
+Completed 500 Internal Server Error in 174ms (ActiveRecord: 0.0ms | Allocations: 12824)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     6:     <%= submit_tag '検索する'  %>
+     7: <% end %>
+     8: <div class="tweets-container">
+     9:     <% @game.each do |g| %>
+    10:     <div class="tweet">
+    11:         <%= g.body %>
+    12:         <%= g.created_at %>
+  
+app/views/games/index.html.erb:9
+  Rendered games/index.html.erb within layouts/application (Duration: 98.4ms | Allocations: 8392)
+Completed 500 Internal Server Error in 229ms (ActiveRecord: 0.0ms | Allocations: 16240)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     6:     <%= submit_tag '検索する'  %>
+     7: <% end %>
+     8: <div class="tweets-container">
+     9:     <% @game.each do |g| %>
+    10:     <div class="tweet">
+    11:         <%= g.body %>
+    12:         <%= g.created_at %>
+  
+app/views/games/index.html.erb:9
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     6:     <%= submit_tag '検索する'  %>
+     7: <% end %>
+     8: <div class="tweets-container">
+     9:     <% @game.each do |g| %>
+    10:     <div class="tweet">
+    11:         <%= g.body %>
+    12:         <%= g.created_at %>
+  
+app/views/games/index.html.erb:9
+Completed 500 Internal Server Error in 198ms (ActiveRecord: 0.0ms | Allocations: 14706)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     6:     <%= submit_tag '検索する'  %>
+     7: <% end %>
+     8: <div class="tweets-container">
+     9:     <% @game.each do |g| %>
+    10:     <div class="tweet">
+    11:         <%= g.body %>
+    12:         <%= g.created_at %>
+  
+app/views/games/index.html.erb:9
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     6:     <%= submit_tag '検索する'  %>
+     7: <% end %>
+     8: <div class="tweets-container">
+     9:     <% @game.each do |g| %>
+    10:     <div class="tweet">
+    11:         <%= g.body %>
+    12:         <%= g.created_at %>
+  
+app/views/games/index.html.erb:9
+Started GET "/games/index" for ::1 at 2021-03-20 15:24:15 +0900
+Started GET "/games/new" for ::1 at 2021-03-20 15:24:15 +0900
+Processing by GamesController#index as HTML
+Started GET "/games/new" for ::1 at 2021-03-20 15:24:16 +0900
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1418)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms | Allocations: 2115)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     6:     <%= submit_tag '検索する'  %>
+     7: <% end %>
+     8: <div class="tweets-container">
+     9:     <% @game.each do |g| %>
+    10:     <div class="tweet">
+    11:         <%= g.body %>
+    12:         <%= g.created_at %>
+  
+app/views/games/index.html.erb:9
+Processing by GamesController#new as HTML
+Processing by GamesController#new as HTML
+  Rendering games/new.html.erb within layouts/application
+  Rendering games/new.html.erb within layouts/application
+  Rendered games/new.html.erb within layouts/application (Duration: 312.6ms | Allocations: 62265)
+  Rendered games/new.html.erb within layouts/application (Duration: 337.7ms | Allocations: 67954)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 986ms (Views: 700.0ms | ActiveRecord: 259.2ms | Allocations: 258689)
+
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 841ms (Views: 683.5ms | ActiveRecord: 109.5ms | Allocations: 198941)
+
+
+Started POST "/games" for ::1 at 2021-03-20 15:24:19 +0900
+Processing by GamesController#create as HTML
+  Parameters: {"authenticity_token"=>"Pvvisjxyq6WzrgMH4ZoHZ5Zp7tG0wjTaJlmcbKn+Xq90Hy25Oz96oi0t6MC/Qf4HN2ZSiuf1bBQnld6wyiWOzQ==", "game"=>{"body"=>""}, "commit"=>"投稿する"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:21:in `create'
+  [1m[36mGame Create (20.0ms)[0m  [1m[32mINSERT INTO `games` (`body`, `created_at`, `updated_at`) VALUES ('', '2021-03-20 06:24:20.139207', '2021-03-20 06:24:20.139207')[0m
+  ↳ app/controllers/games_controller.rb:21:in `create'
+  [1m[35m (8.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:21:in `create'
+Redirected to http://localhost:3000/games/index
+Completed 302 Found in 83ms (ActiveRecord: 28.9ms | Allocations: 2956)
+
+
+Started GET "/games/index" for ::1 at 2021-03-20 15:24:20 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1420)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 1967)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     6:     <%= submit_tag '検索する'  %>
+     7: <% end %>
+     8: <div class="tweets-container">
+     9:     <% @game.each do |g| %>
+    10:     <div class="tweet">
+    11:         <%= g.body %>
+    12:         <%= g.created_at %>
+  
+app/views/games/index.html.erb:9
+Started GET "/games/index" for ::1 at 2021-03-20 15:25:01 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (7.1ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  Rendered games/index.html.erb within layouts/application (Duration: 177.0ms | Allocations: 6601)
+Completed 500 Internal Server Error in 194ms (ActiveRecord: 145.7ms | Allocations: 7785)
+
+
+  
+ActionView::Template::Error (undefined method `total_pages' for nil:NilClass):
+    15:         <%= button_to "削除する", game_path(g.id), method: :delete %>
+    16:     </div>
+    17:     <% end %>
+    18:     <%= paginate @games %>
+    19: </div>
+  
+app/views/games/index.html.erb:18
+Started GET "/games/index" for ::1 at 2021-03-20 15:25:17 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (1.4ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:18
+  Rendered games/index.html.erb within layouts/application (Duration: 325.4ms | Allocations: 3648)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 428ms (Views: 415.5ms | ActiveRecord: 3.9ms | Allocations: 9336)
+
+
+  [1m[35m (20.8ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT GET_LOCK('3882519188014264140', 0)[0m
+  [1m[35m (8.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to DeviseCreateUsers (20210320063438)
+  [1m[35m (301.1ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (98.0ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (143.9ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (4.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210320063438')[0m
+  [1m[35m (33.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (32.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT RELEASE_LOCK('3882519188014264140')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/games/index" for ::1 at 2021-03-20 15:47:30 +0900
+  [1m[35m (4.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (28.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (1.4ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:21
+  Rendered games/index.html.erb within layouts/application (Duration: 406.4ms | Allocations: 8225)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1288ms (Views: 1037.0ms | ActiveRecord: 56.1ms | Allocations: 18325)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-03-20 15:47:36 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 1.5ms | Allocations: 205)
+  Rendered users/shared/_links.html.erb (Duration: 2.5ms | Allocations: 511)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 672.2ms | Allocations: 6799)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 890ms (Views: 808.2ms | ActiveRecord: 60.2ms | Allocations: 18308)
+
+
+Started POST "/users" for ::1 at 2021-03-20 15:47:50 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"bcN5TB47kaufavzma3MQGE4vjA6jqNY74NKHEompwpfRanmVTw5w4M4C0AAVATb++mkxmv0fHNPlRlJiKZ+cvg==", "user"=>{"email"=>"a@a", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (6.6ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'a@a' LIMIT 1[0m
+  [1m[36mUser Create (4.8ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('a@a', '$2a$12$TxgLmE.6ju2.g73ztf5JYeLVljXdSt/QuH7z1AdSL7VCvnveOFgEi', '2021-03-20 06:47:51.295748', '2021-03-20 06:47:51.295748')[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1307ms (ActiveRecord: 18.8ms | Allocations: 11727)
+
+
+Started GET "/" for ::1 at 2021-03-20 15:47:51 +0900
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.0.3.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/railties-6.0.3.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 225.0ms | Allocations: 189)
+Completed 200 OK in 250ms (Views: 230.7ms | ActiveRecord: 0.0ms | Allocations: 1009)
+
+
+Started GET "/" for ::1 at 2021-03-20 15:49:30 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (9.0ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:21
+  Rendered games/index.html.erb within layouts/application (Duration: 221.3ms | Allocations: 7484)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 327ms (Views: 154.3ms | ActiveRecord: 161.6ms | Allocations: 13546)
+
+
+  [1m[35m (2.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT GET_LOCK('3882519188014264140', 0)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to DeviseCreateUsers (20210320063438)
+  [1m[35m (53.8ms)[0m  [1m[35mDROP INDEX `index_users_on_reset_password_token` ON `users`[0m
+  [1m[35m (38.6ms)[0m  [1m[35mDROP INDEX `index_users_on_email` ON `users`[0m
+  [1m[35m (101.0ms)[0m  [1m[35mDROP TABLE `users`[0m
+  [1m[36mprimary::SchemaMigration Destroy (6.3ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20210320063438'[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('3882519188014264140')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT GET_LOCK('3882519188014264140', 0)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateGames (20210320033550)
+  [1m[35m (48.9ms)[0m  [1m[35mDROP TABLE `games`[0m
+  [1m[36mprimary::SchemaMigration Destroy (5.9ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20210320033550'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('3882519188014264140')[0m
+  [1m[35m (15.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (2.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT GET_LOCK('3882519188014264140', 0)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateGames (20210320033550)
+  [1m[35m (83.3ms)[0m  [1m[35mCREATE TABLE `games` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `body` text, `title` text, `user_id` int, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (1.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210320033550')[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateUsers (20210320063438)
+  [1m[35m (80.2ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (53.3ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (45.1ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210320063438')[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.1ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('3882519188014264140')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[36mGame Load (1.0ms)[0m  [1m[34mSELECT `games`.* FROM `games`[0m
+Started GET "/" for ::1 at 2021-03-20 16:00:21 +0900
+  [1m[35m (4.9ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (1.6ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  Rendered games/index.html.erb within layouts/application (Duration: 578.0ms | Allocations: 3568)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1322ms (Views: 501.8ms | ActiveRecord: 386.4ms | Allocations: 14618)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-03-20 16:00:30 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (15.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 5.9ms | Allocations: 205)
+  Rendered users/shared/_links.html.erb (Duration: 5.6ms | Allocations: 511)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 355.8ms | Allocations: 5309)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1313ms (Views: 833.8ms | ActiveRecord: 354.7ms | Allocations: 18867)
+
+
+Started POST "/users" for ::1 at 2021-03-20 16:00:43 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"FuftVJgyyLw+Q2+U6O9Tt+JGtZGUjX+RoHa2l+ETcA+qTu2NyQcp928rQ3KWnXVRVgAIBco6tXml4mPnQSUuJg==", "user"=>{"email"=>"b@b", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (2.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'b@b' LIMIT 1[0m
+  [1m[36mUser Create (3.3ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('b@b', '$2a$12$pqeIHb4Hi6fomI30AlAO8uiaAlLiyuZoyd8bWbW91I4hvqt3lJoxq', '2021-03-20 07:00:45.565700', '2021-03-20 07:00:45.565700')[0m
+  [1m[35m (17.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1670ms (ActiveRecord: 25.2ms | Allocations: 10567)
+
+
+Started GET "/" for ::1 at 2021-03-20 16:00:46 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (2.3ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  Rendered games/index.html.erb within layouts/application (Duration: 21.2ms | Allocations: 1149)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 203ms (Views: 197.3ms | ActiveRecord: 2.3ms | Allocations: 5884)
+
+
+Started GET "/" for ::1 at 2021-03-20 16:01:09 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (1.3ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  Rendered games/index.html.erb within layouts/application (Duration: 14.0ms | Allocations: 1145)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 130ms (Views: 125.5ms | ActiveRecord: 1.3ms | Allocations: 5878)
+
+
+Started GET "/games/new" for ::1 at 2021-03-20 16:01:18 +0900
+Processing by GamesController#new as HTML
+  Rendering games/new.html.erb within layouts/application
+  Rendered games/new.html.erb within layouts/application (Duration: 101.3ms | Allocations: 682)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 419ms (Views: 367.0ms | ActiveRecord: 1.9ms | Allocations: 9071)
+
+
+Started POST "/games" for ::1 at 2021-03-20 16:01:23 +0900
+Processing by GamesController#create as HTML
+  Parameters: {"authenticity_token"=>"o4ViB+wfmRhLq/vf5Ejgm2T44whPvYqs1YhWiFSBKyDpYa0M61JIH9UoEBi6kxn7xfdfUxyK0mLURBRUN1r7Qg==", "game"=>{"body"=>"カロン"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (7.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:21:in `create'
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:22:in `create'
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:22:in `create'
+  [1m[36mGame Create (5.1ms)[0m  [1m[32mINSERT INTO `games` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('カロン', 1, '2021-03-20 07:01:24.989170', '2021-03-20 07:01:24.989170')[0m
+  ↳ app/controllers/games_controller.rb:22:in `create'
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:22:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 1252ms (ActiveRecord: 20.9ms | Allocations: 11591)
+
+
+Started GET "/" for ::1 at 2021-03-20 16:01:25 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (12.6ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (28.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  Rendered games/index.html.erb within layouts/application (Duration: 70.3ms | Allocations: 2208)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 306ms (Views: 262.3ms | ActiveRecord: 40.6ms | Allocations: 6937)
+
+
+  [1m[35m (4.1ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT GET_LOCK('3882519188014264140', 0)[0m
+  [1m[35m (5.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateLikes (20210320070330)
+  [1m[35m (193.9ms)[0m  [1m[35mCREATE TABLE `likes` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `game_id` bigint NOT NULL, `user_id` bigint NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_likes_on_game_id`  (`game_id`),  INDEX `index_likes_on_user_id`  (`user_id`), CONSTRAINT `fk_rails_9bbf71d03d`
+FOREIGN KEY (`game_id`)
+  REFERENCES `games` (`id`)
+, CONSTRAINT `fk_rails_1e09b5dabf`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (2.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210320070330')[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (5.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT RELEASE_LOCK('3882519188014264140')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-03-20 16:31:16 +0900
+  [1m[35m (19.0ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (3.8ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  Rendered games/index.html.erb within layouts/application (Duration: 965.8ms | Allocations: 102903)
+Completed 500 Internal Server Error in 1099ms (ActiveRecord: 188.5ms | Allocations: 107169)
+
+
+  
+ActionView::Template::Error (undefined method `game_path' for #<#<Class:0x000000000a066148>:0x000000000a0647d0>
+Did you mean?  image_path):
+    11:         <%= g.user.email %>
+    12:         <%= g.body %>
+    13:         <%= g.created_at %>
+    14:         <%= link_to "詳細へ", game_path(g.id) %>
+    15:         <%= link_to "編集する", edit_game_path(g.id) %>
+    16:         <%= button_to "削除する", game_path(g.id), method: :delete %>
+    17:     </div>
+  
+app/views/games/index.html.erb:14
+app/views/games/index.html.erb:9
+Started GET "/" for ::1 at 2021-03-20 16:35:26 +0900
+  [1m[35m (4.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  Rendered games/index.html.erb within layouts/application (Duration: 240.2ms | Allocations: 16105)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2245ms (Views: 2089.3ms | ActiveRecord: 122.4ms | Allocations: 42164)
+
+
+Started GET "/games/1" for ::1 at 2021-03-20 16:35:35 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (6.1ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:13:in `show'
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/show.html.erb:8
+  [1m[36mLike Exists? (14.0ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:12:in `already_liked?'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/show.html.erb:15
+  Rendered games/show.html.erb within layouts/application (Duration: 2332.6ms | Allocations: 183028)
+Completed 500 Internal Server Error in 2350ms (ActiveRecord: 92.8ms | Allocations: 184422)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `games_index_path' for #<#<Class:0x00000000079ae398>:0x000000000a1d23d8>
+Did you mean?  games_path):
+    20:   <% end %>
+    21: </div>
+    22: 
+    23: <%= link_to "Tweet一覧に戻る", games_index_path %>
+  
+app/views/games/show.html.erb:23
+Started GET "/games/1" for ::1 at 2021-03-20 16:36:56 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (2.8ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:13:in `show'
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/show.html.erb:8
+  [1m[36mLike Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:12:in `already_liked?'
+  [1m[35m (4.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/show.html.erb:15
+  Rendered games/show.html.erb within layouts/application (Duration: 151.2ms | Allocations: 3150)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 336ms (Views: 316.2ms | ActiveRecord: 10.4ms | Allocations: 9791)
+
+
+Started POST "/games/1/likes" for ::1 at 2021-03-20 16:37:03 +0900
+Processing by LikesController#create as HTML
+  Parameters: {"authenticity_token"=>"TB+Kn12ZVCcn6GEy03DjAEaRbpbDetMi7KE/bwPNlW8G+0WUWtSFILlrivWNqxpg557SzZBNi+ztbX2zYBZFDQ==", "game_id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/likes_controller.rb:3:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/likes_controller.rb:3:in `create'
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/likes_controller.rb:3:in `create'
+  [1m[36mLike Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`game_id` = 1 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  ↳ app/controllers/likes_controller.rb:3:in `create'
+  [1m[36mLike Create (9.3ms)[0m  [1m[32mINSERT INTO `likes` (`game_id`, `user_id`, `created_at`, `updated_at`) VALUES (1, 1, '2021-03-20 07:37:04.015922', '2021-03-20 07:37:04.015922')[0m
+  ↳ app/controllers/likes_controller.rb:3:in `create'
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/likes_controller.rb:3:in `create'
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 81ms (ActiveRecord: 19.7ms | Allocations: 11236)
+
+
+Started GET "/games/1" for ::1 at 2021-03-20 16:37:04 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.8ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:13:in `show'
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/show.html.erb:8
+  [1m[36mLike Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:12:in `already_liked?'
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/show.html.erb:11
+  Rendered games/show.html.erb within layouts/application (Duration: 28.1ms | Allocations: 2816)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 176ms (Views: 167.4ms | ActiveRecord: 5.6ms | Allocations: 8308)
+
+
+Started DELETE "/games/1/likes/1" for ::1 at 2021-03-20 16:37:05 +0900
+Processing by LikesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HDhmTCwWkY37z1NiiVbC4MpA/cT/Yl0uk6bZYarF33pW3KlHK1tAimVMuKXXjTuAa09Bn6xVBeCSapu9yR4PGA==", "game_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/likes_controller.rb:8:in `destroy'
+  [1m[36mLike Load (2.9ms)[0m  [1m[34mSELECT `likes`.* FROM `likes` WHERE `likes`.`game_id` = 1 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  ↳ app/controllers/likes_controller.rb:8:in `destroy'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/likes_controller.rb:9:in `destroy'
+  [1m[36mLike Destroy (7.2ms)[0m  [1m[31mDELETE FROM `likes` WHERE `likes`.`id` = 1[0m
+  ↳ app/controllers/likes_controller.rb:9:in `destroy'
+  [1m[35m (4.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/likes_controller.rb:9:in `destroy'
+Redirected to http://localhost:3000/games/1
+Completed 302 Found in 47ms (ActiveRecord: 15.4ms | Allocations: 4161)
+
+
+Started GET "/games/1" for ::1 at 2021-03-20 16:37:06 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:13:in `show'
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mUser Load (9.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/show.html.erb:8
+  [1m[36mLike Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:12:in `already_liked?'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/show.html.erb:15
+  Rendered games/show.html.erb within layouts/application (Duration: 39.5ms | Allocations: 2773)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 200ms (Views: 183.5ms | ActiveRecord: 13.0ms | Allocations: 8244)
+
+
+Started GET "/" for ::1 at 2021-03-20 16:37:07 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  Rendered games/index.html.erb within layouts/application (Duration: 49.4ms | Allocations: 3280)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 112ms (Views: 105.6ms | ActiveRecord: 1.6ms | Allocations: 8368)
+
+
+  [1m[35m (2.3ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT GET_LOCK('3882519188014264140', 0)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateLikes (20210320070330)
+  [1m[35m (50.5ms)[0m  [1m[35mDROP TABLE `likes`[0m
+  [1m[36mprimary::SchemaMigration Destroy (6.9ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20210320070330'[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('3882519188014264140')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (2.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT GET_LOCK('3882519188014264140', 0)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to DeviseCreateUsers (20210320063438)
+  [1m[35m (95.9ms)[0m  [1m[35mDROP INDEX `index_users_on_reset_password_token` ON `users`[0m
+  [1m[35m (87.5ms)[0m  [1m[35mDROP INDEX `index_users_on_email` ON `users`[0m
+  [1m[35m (51.0ms)[0m  [1m[35mDROP TABLE `users`[0m
+  [1m[36mprimary::SchemaMigration Destroy (30.8ms)[0m  [1m[31mDELETE FROM `schema_migrations` WHERE `schema_migrations`.`version` = '20210320063438'[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT RELEASE_LOCK('3882519188014264140')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for ::1 at 2021-03-20 16:50:10 +0900
+  [1m[35m (7.9ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (6.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.5) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.5) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.5) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (1.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT GET_LOCK('3882519188014264140', 0)[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to DeviseCreateUsers (20210320063438)
+  [1m[35m (158.6ms)[0m  [1m[35mCREATE TABLE `users` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `name` varchar(255), `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (80.4ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (98.3ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (2.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210320063438')[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLikes (20210320070330)
+  [1m[35m (177.5ms)[0m  [1m[35mCREATE TABLE `likes` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `game_id` bigint NOT NULL, `user_id` bigint NOT NULL, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL,  INDEX `index_likes_on_game_id`  (`game_id`),  INDEX `index_likes_on_user_id`  (`user_id`), CONSTRAINT `fk_rails_9bbf71d03d`
+FOREIGN KEY (`game_id`)
+  REFERENCES `games` (`id`)
+, CONSTRAINT `fk_rails_1e09b5dabf`
+FOREIGN KEY (`user_id`)
+  REFERENCES `users` (`id`)
+)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (1.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210320070330')[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.8ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT RELEASE_LOCK('3882519188014264140')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-03-20 16:52:57 +0900
+  [1m[35m (3.4ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (3.2ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  Rendered games/index.html.erb within layouts/application (Duration: 568.4ms | Allocations: 11580)
+Completed 500 Internal Server Error in 733ms (ActiveRecord: 217.1ms | Allocations: 16690)
+
+
+  
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+     8: <div class="tweets-container">
+     9:     <% @game.each do |g| %>
+    10:     <div class="tweet">
+    11:         <%= g.user.email %>
+    12:         <%= g.body %>
+    13:         <%= g.created_at %>
+    14:         <%= link_to "詳細へ", game_path(g.id) %>
+  
+app/views/games/index.html.erb:11
+app/views/games/index.html.erb:9
+Started GET "/users/sign_in" for ::1 at 2021-03-20 16:53:23 +0900
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 4.3ms | Allocations: 607)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 389.7ms | Allocations: 5482)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 4519ms (Views: 4463.7ms | ActiveRecord: 1.1ms | Allocations: 40780)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-03-20 16:53:33 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 7.3ms | Allocations: 204)
+  Rendered users/shared/_links.html.erb (Duration: 15.0ms | Allocations: 116)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 498.2ms | Allocations: 2109)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 730ms (Views: 726.8ms | ActiveRecord: 0.0ms | Allocations: 8194)
+
+
+Started POST "/users" for ::1 at 2021-03-20 16:53:59 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"Zu/1c9345AgPKRrWqEohIMr0Vzd1GySs03AsKiA7p0HaRvWqjM0FQ15BNjDWOAfGfrLqoyus7kTW5PlagA35aA==", "user"=>{"name"=>"かり", "email"=>"c@c", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (3.5ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'c@c' LIMIT 1[0m
+  [1m[36mUser Create (4.1ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `name`, `created_at`, `updated_at`) VALUES ('c@c', '$2a$12$GKG7/BdveftokYcJ/uKw3exGnWm4aRUO.JAV5ANZVGgpuGy0DjXCe', 'かり', '2021-03-20 07:54:01.435104', '2021-03-20 07:54:01.435104')[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1930ms (ActiveRecord: 14.1ms | Allocations: 10288)
+
+
+Started GET "/" for ::1 at 2021-03-20 16:54:01 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (1.4ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:19
+  Rendered games/index.html.erb within layouts/application (Duration: 51.8ms | Allocations: 3918)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 216ms (Views: 206.0ms | ActiveRecord: 5.2ms | Allocations: 9163)
+
+
+Started GET "/users/1" for ::1 at 2021-03-20 16:54:07 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (1.5ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (2.9ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (Duration: 875.1ms | Allocations: 9911)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1079ms (Views: 786.3ms | ActiveRecord: 276.2ms | Allocations: 16419)
+
+
+Started GET "/users/1" for ::1 at 2021-03-20 16:55:11 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (1.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (5.5ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:17
+  Rendered users/show.html.erb within layouts/application (Duration: 219.5ms | Allocations: 3161)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 418ms (Views: 384.3ms | ActiveRecord: 12.9ms | Allocations: 9986)
+
+
+Started GET "/games" for ::1 at 2021-03-20 16:55:14 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (1.6ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:19
+  Rendered games/index.html.erb within layouts/application (Duration: 51.7ms | Allocations: 4307)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 158ms (Views: 147.5ms | ActiveRecord: 3.9ms | Allocations: 10231)
+
+

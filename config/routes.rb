@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :users, only: [:show] 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get 'games/index' => 'games#index'
-  get 'games/new' => 'games#new'
-  get 'games/show' => 'games#show'
-  post 'games' => 'games#create'
-  get 'games/:id' => 'games#show',as: 'game'
+  root 'games#index'
+  resources :games do
+    resources :likes, only: [:create, :destroy]
+  end
 end

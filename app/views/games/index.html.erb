@@ -1,11 +1,26 @@
 <h1>osakedaisuki</h1>
 <h3>Tweet一覧</h3>
+<h3>投稿を検索</h3>
+<%= form_tag({controller:"games",action:"index"}, method: :get) do %>
+    <%= text_field_tag :search %>
+    <%= submit_tag '検索する'  %>
+<% end %>
 <div class="tweets-container">
-  <% @game.each do |g| %>
+    <% @game.each do |g| %>
     <div class="tweet">
-      <%= g.body %>
-      <%= g.created_at %>
-      <%= link_to "詳細へ", game_path(g.id) %>
+        <%= g.user.email %>
+        <%= g.body %>
+        <%= g.created_at %>
+        <%= link_to "詳細へ", game_path(g.id) %>
+        <%= link_to "編集する", edit_game_path(g.id) %>
+        <%= button_to "削除する", game_path(g.id), method: :delete %>
     </div>
-  <% end %>
+    <% end %>
+    <% if user_signed_in? %>
+        <%= link_to "マイページへ", user_path(current_user.id) %>　
+    <% end %>
+    <%= link_to "ログイン", games_path %>
+    <%= link_to "新規登録", new_user_registration_path %>
+    <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+    <%= paginate @game %>
 </div>
