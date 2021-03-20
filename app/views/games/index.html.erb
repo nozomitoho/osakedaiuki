@@ -8,8 +8,22 @@
 <div class="tweets-container">
     <% @game.each do |g| %>
     <div class="tweet">
-        <%= g.user.email %>
+        <%= link_to g.user.email , game_path(g.id)  %>
+        <%= g.title %>
         <%= g.body %>
+        <% if user_signed_in? %>
+        <% if current_user.already_liked?(g) %>
+            <%= link_to game_like_path(id: g.id, game_id: g.id), method: :delete do %>
+                <i class="fas fa-heart"></i><%= g.likes.count %>
+            <% end %>
+        <% else %>
+            <%= link_to game_likes_path(id: g.id, game_id: g.id), method: :post do %>
+                <i class="far fa-heart"></i><%= g.likes.count %>
+            <% end %>
+        <% end %>
+    <% else %>
+        <i class="far fa-heart"></i><%= g.likes.count %>
+    <% end %>
         <%= g.created_at %>
         <%= link_to "詳細へ", game_path(g.id) %>
         <%= link_to "編集する", edit_game_path(g.id) %>
@@ -22,5 +36,6 @@
     <%= link_to "ログイン", new_user_session_path %>
     <%= link_to "新規登録", new_user_registration_path %>
     <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+    <%= link_to "新規投稿", new_game_path %>
     <%= paginate @game %>
 </div>

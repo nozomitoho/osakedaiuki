@@ -1333,6 +1333,7 @@ Processing by GamesController#index as HTML
 Completed 200 OK in 158ms (Views: 147.5ms | ActiveRecord: 3.9ms | Allocations: 10231)
 
 
+<<<<<<< HEAD
   [1m[35m (11.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
   [1m[35m (29.4ms)[0m  [1m[35mCREATE DATABASE `osakedaisuki_development` DEFAULT CHARACTER SET `utf8mb4`[0m
   [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
@@ -1761,6 +1762,705 @@ actionpack (6.0.3.5) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
 actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
 actionpack (6.0.3.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
 actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+=======
+Started GET "/games" for ::1 at 2021-03-20 17:38:25 +0900
+  [1m[35m (13.8ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (5.4ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (3.9ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:20
+  Rendered games/index.html.erb within layouts/application (Duration: 338.4ms | Allocations: 17924)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 704ms (Views: 444.2ms | ActiveRecord: 135.9ms | Allocations: 32342)
+
+
+Started GET "/games" for ::1 at 2021-03-20 17:41:24 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (14.0ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (26.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:20
+  Rendered games/index.html.erb within layouts/application (Duration: 597.3ms | Allocations: 4380)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 833ms (Views: 726.4ms | ActiveRecord: 47.2ms | Allocations: 10667)
+
+
+Started GET "/games/new" for ::1 at 2021-03-20 17:41:28 +0900
+Processing by GamesController#new as HTML
+  Rendering games/new.html.erb within layouts/application
+  Rendered games/new.html.erb within layouts/application (Duration: 237.5ms | Allocations: 6527)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 307ms (Views: 300.0ms | ActiveRecord: 0.0ms | Allocations: 11656)
+
+
+Started POST "/games" for ::1 at 2021-03-20 17:41:36 +0900
+Processing by GamesController#create as HTML
+  Parameters: {"authenticity_token"=>"y9Ct3v4jLtrqw9OAlkDvgl1MqmFiTw9pLzlbK2h/On+RrQzjVE1d2tRlcy+6hdCUdE1eTnd3HCWXV9lECGQWFA==", "game"=>{"title"=>"あっり", "body"=>"カリ"}, "commit"=>"投稿する"}
+[31mUnpermitted parameter: :title[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:21:in `create'
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:22:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:22:in `create'
+  [1m[36mGame Create (8.1ms)[0m  [1m[32mINSERT INTO `games` (`body`, `user_id`, `created_at`, `updated_at`) VALUES ('カリ', 1, '2021-03-20 08:41:36.774743', '2021-03-20 08:41:36.774743')[0m
+  ↳ app/controllers/games_controller.rb:22:in `create'
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:22:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 53ms (ActiveRecord: 19.0ms | Allocations: 5497)
+
+
+Started GET "/" for ::1 at 2021-03-20 17:41:36 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:20
+  Rendered games/index.html.erb within layouts/application (Duration: 20.1ms | Allocations: 4162)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 112ms (Views: 106.7ms | ActiveRecord: 1.8ms | Allocations: 9316)
+
+
+Started GET "/" for ::1 at 2021-03-20 17:42:22 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (1.4ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:20
+  Rendered games/index.html.erb within layouts/application (Duration: 184.5ms | Allocations: 15337)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 261ms (Views: 122.8ms | ActiveRecord: 120.2ms | Allocations: 22819)
+
+
+Started GET "/games/new" for ::1 at 2021-03-20 17:42:27 +0900
+Processing by GamesController#new as HTML
+  Rendering games/new.html.erb within layouts/application
+  Rendered games/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 635)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 63ms (Views: 62.1ms | ActiveRecord: 0.0ms | Allocations: 5727)
+
+
+Started POST "/games" for ::1 at 2021-03-20 17:42:35 +0900
+Processing by GamesController#create as HTML
+  Parameters: {"authenticity_token"=>"bFOBliVRW/FCl9gddCFE8cLi81ihSVKuDQd2vj3pTmE2LiCrjz8o8XwxeLJY5Hvn6+MHd7RxQeK1afTRXfJiCg==", "game"=>{"title"=>"あっり", "body"=>"かり"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:21:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:22:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:22:in `create'
+  [1m[36mGame Create (1.1ms)[0m  [1m[32mINSERT INTO `games` (`body`, `title`, `user_id`, `created_at`, `updated_at`) VALUES ('かり', 'あっり', 1, '2021-03-20 08:42:35.244315', '2021-03-20 08:42:35.244315')[0m
+  ↳ app/controllers/games_controller.rb:22:in `create'
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:22:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 29ms (ActiveRecord: 10.8ms | Allocations: 5317)
+
+
+Started GET "/" for ::1 at 2021-03-20 17:42:35 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:20
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:27
+  Rendered games/index.html.erb within layouts/application (Duration: 31.6ms | Allocations: 5992)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 89ms (Views: 82.5ms | ActiveRecord: 5.0ms | Allocations: 11165)
+
+
+Started GET "/" for ::1 at 2021-03-20 17:45:53 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (5.8ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:14
+  [1m[36mLike Exists? (4.3ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:13:in `already_liked?'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:13:in `already_liked?'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 2[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:13:in `already_liked?'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 3[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:40
+  Rendered games/index.html.erb within layouts/application (Duration: 502.7ms | Allocations: 18186)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 611ms (Views: 453.9ms | ActiveRecord: 138.3ms | Allocations: 24383)
+
+
+Started POST "/games/3/likes?id=3" for ::1 at 2021-03-20 17:46:00 +0900
+Processing by LikesController#create as HTML
+  Parameters: {"authenticity_token"=>"AyRDsA9cUKoCGvg4bUbgClLD8kd1d2nSJCvX5lSxUC9JwIy7CBGBrZyZE/8znRlq88xOHCZAMRwl55U6N2qATQ==", "id"=>"3", "game_id"=>"3"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/likes_controller.rb:3:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/likes_controller.rb:3:in `create'
+  [1m[36mGame Load (1.9ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/likes_controller.rb:3:in `create'
+  [1m[36mLike Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`game_id` = 3 AND `likes`.`user_id` = 1 LIMIT 1[0m
+  ↳ app/controllers/likes_controller.rb:3:in `create'
+  [1m[36mLike Create (4.0ms)[0m  [1m[32mINSERT INTO `likes` (`game_id`, `user_id`, `created_at`, `updated_at`) VALUES (3, 1, '2021-03-20 08:46:01.339941', '2021-03-20 08:46:01.339941')[0m
+  ↳ app/controllers/likes_controller.rb:3:in `create'
+  [1m[35m (8.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/likes_controller.rb:3:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 81ms (ActiveRecord: 19.0ms | Allocations: 11003)
+
+
+Started GET "/" for ::1 at 2021-03-20 17:46:01 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (8.3ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (15.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:14
+  [1m[36mLike Exists? (4.6ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:13:in `already_liked?'
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (7.3ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:13:in `already_liked?'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 2[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:13:in `already_liked?'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 3[0m
+  ↳ app/views/games/index.html.erb:17
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:40
+  Rendered games/index.html.erb within layouts/application (Duration: 110.1ms | Allocations: 11026)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 329ms (Views: 270.0ms | ActiveRecord: 48.6ms | Allocations: 16177)
+
+
+Started GET "/" for ::1 at 2021-03-20 17:51:20 +0900
+  [1m[35m (9.8ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (2.2ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:14
+  [1m[36mLike Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:13:in `already_liked?'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:13:in `already_liked?'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 2[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:13:in `already_liked?'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 3[0m
+  ↳ app/views/games/index.html.erb:17
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:40
+  Rendered games/index.html.erb within layouts/application (Duration: 177.8ms | Allocations: 12357)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 278ms (Views: 252.8ms | ActiveRecord: 11.2ms | Allocations: 18645)
+
+
+Started GET "/games/2" for ::1 at 2021-03-20 17:51:25 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:13:in `show'
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/show.html.erb:8
+  [1m[36mLike Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:13:in `already_liked?'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 2[0m
+  ↳ app/views/games/show.html.erb:15
+  Rendered games/show.html.erb within layouts/application (Duration: 58.0ms | Allocations: 3128)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 162ms (Views: 150.4ms | ActiveRecord: 3.1ms | Allocations: 9102)
+
+
+Started GET "/" for ::1 at 2021-03-20 17:51:28 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (1.4ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:14
+  [1m[36mLike Exists? (2.2ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:13:in `already_liked?'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:13:in `already_liked?'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 2[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:13:in `already_liked?'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 3[0m
+  ↳ app/views/games/index.html.erb:17
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:40
+  Rendered games/index.html.erb within layouts/application (Duration: 154.0ms | Allocations: 11019)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 210ms (Views: 196.3ms | ActiveRecord: 11.7ms | Allocations: 16186)
+
+
+Started GET "/users/1" for ::1 at 2021-03-20 17:51:39 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (1.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:17
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:18
+  Rendered users/show.html.erb within layouts/application (Duration: 43.0ms | Allocations: 6190)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 173ms (Views: 160.7ms | ActiveRecord: 4.8ms | Allocations: 12666)
+
+
+Started GET "/games" for ::1 at 2021-03-20 17:51:43 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:14
+  [1m[36mLike Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:13:in `already_liked?'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:13:in `already_liked?'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 2[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:13:in `already_liked?'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 3[0m
+  ↳ app/views/games/index.html.erb:17
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:40
+  Rendered games/index.html.erb within layouts/application (Duration: 43.5ms | Allocations: 11022)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 153ms (Views: 145.1ms | ActiveRecord: 6.8ms | Allocations: 16189)
+
+
+Started GET "/users/1" for ::1 at 2021-03-20 17:51:47 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (3.2ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:17
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:18
+  Rendered users/show.html.erb within layouts/application (Duration: 18.4ms | Allocations: 3786)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 76ms (Views: 66.2ms | ActiveRecord: 6.1ms | Allocations: 9472)
+
+
+  [1m[35m (30.1ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.0ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT GET_LOCK('3882519188014264140', 0)[0m
+  [1m[35m (16.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Migrating to CreateRelationships (20210320090547)
+  [1m[35m (251.6ms)[0m  [1m[35mCREATE TABLE `relationships` (`id` bigint NOT NULL AUTO_INCREMENT PRIMARY KEY, `follower_id` int, `following_id` int, `created_at` datetime(6) NOT NULL, `updated_at` datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mprimary::SchemaMigration Create (2.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20210320090547')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (47.3ms)[0m  [1m[34mSELECT RELEASE_LOCK('3882519188014264140')[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Started GET "/users/1" for ::1 at 2021-03-20 19:36:38 +0900
+  [1m[35m (37.2ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (30.0ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (8.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (19.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (20.5ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (9.4ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:19
+  Rendered users/show.html.erb within layouts/application (Duration: 4494.0ms | Allocations: 189431)
+Completed 500 Internal Server Error in 5354ms (ActiveRecord: 58.7ms | Allocations: 198206)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x000000000a3eb138>:0x000000000a3e9748>
+Did you mean?  @user):
+    20:   <%= t.body %>
+    21: <% end %>
+    22: <div class="follower">
+    23: <%= link_to followers_users_user_path(user.id) do %>
+    24:     <h5 style="color: black;">フォロワー<%= user.followers.count %>人</h5>
+    25: <% end %>
+    26: </div>
+  
+app/views/users/show.html.erb:23
+Started GET "/users/1" for ::1 at 2021-03-20 19:45:48 +0900
+  [1m[35m (23.6ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (16.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (3.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (3.6ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:19
+  Rendered users/show.html.erb within layouts/application (Duration: 2389.2ms | Allocations: 179928)
+Completed 500 Internal Server Error in 2646ms (ActiveRecord: 25.4ms | Allocations: 182032)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x000000000a658088>:0x000000000a6625b0>
+Did you mean?  @user):
+    20:   <%= t.body %>
+    21: <% end %>
+    22: <div class="follower">
+    23: <%= link_to followers_user_path(user.id) do %>
+    24:     <h5 style="color: black;">フォロワー<%= user.followers.count %>人</h5>
+    25: <% end %>
+    26: </div>
+  
+app/views/users/show.html.erb:23
+Started GET "/users/1" for ::1 at 2021-03-20 20:29:53 +0900
+  [1m[35m (30.5ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (34.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (6.4ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (8.2ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:19
+  [1m[35m (9.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`follower_id` WHERE `relationships`.`following_id` = 1[0m
+  ↳ app/views/users/show.html.erb:24
+  Rendered users/show.html.erb within layouts/application (Duration: 1185.1ms | Allocations: 106528)
+Completed 500 Internal Server Error in 1401ms (ActiveRecord: 363.0ms | Allocations: 115548)
+
+
+  
+ActionView::Template::Error (undefined method `following_users_user_path' for #<#<Class:0x0000000009d02678>:0x0000000009d000a8>
+Did you mean?  following_user_path
+               followers_user_path):
+    25: <% end %>
+    26: </div>
+    27: <div class="follow">
+    28: <%= link_to following_users_user_path(@user.id) do %>
+    29:         <h5 style="color: black;">フォロー<%= @user.following.count %>人</h5>
+    30: <% end %>
+    31: </div>
+  
+app/views/users/show.html.erb:28
+Started GET "/users/1" for ::1 at 2021-03-20 20:32:31 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (1.3ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:19
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`follower_id` WHERE `relationships`.`following_id` = 1[0m
+  ↳ app/views/users/show.html.erb:24
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`following_id` WHERE `relationships`.`follower_id` = 1[0m
+  ↳ app/views/users/show.html.erb:29
+  Rendered users/_follow_form.html (Duration: 41.7ms | Allocations: 72)
+  Rendered users/show.html.erb within layouts/application (Duration: 198.7ms | Allocations: 6714)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 919ms (Views: 897.3ms | ActiveRecord: 9.4ms | Allocations: 28113)
+
+
+Started GET "/users/1/following" for ::1 at 2021-03-20 20:32:36 +0900
+Processing by UsersController#following as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:8:in `following'
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 3.7ms | Allocations: 2459)
+
+
+  
+ActionView::MissingTemplate (Missing template users/show_follow, application/show_follow with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "C:/Users/karino daishi/Desktop/osakedaisuki/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/devise-4.7.3/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/kaminari-core-1.2.1/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3.5/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3.5/app/views"
+):
+  
+app/controllers/users_controller.rb:10:in `following'
+Started GET "/users/1" for ::1 at 2021-03-20 20:32:40 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (81.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (1.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (1.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:19
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`follower_id` WHERE `relationships`.`following_id` = 1[0m
+  ↳ app/views/users/show.html.erb:24
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`following_id` WHERE `relationships`.`follower_id` = 1[0m
+  ↳ app/views/users/show.html.erb:29
+  Rendered users/_follow_form.html (Duration: 0.1ms | Allocations: 10)
+  Rendered users/show.html.erb within layouts/application (Duration: 39.4ms | Allocations: 6026)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 192ms (Views: 86.7ms | ActiveRecord: 88.8ms | Allocations: 11917)
+
+
+Started GET "/users/1/following" for ::1 at 2021-03-20 20:33:27 +0900
+Processing by UsersController#following as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:8:in `following'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.3ms | Allocations: 1540)
+
+
+  
+ActionView::MissingTemplate (Missing template users/show_follow, application/show_follow with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "C:/Users/karino daishi/Desktop/osakedaisuki/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/devise-4.7.3/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/kaminari-core-1.2.1/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3.5/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3.5/app/views"
+):
+  
+app/controllers/users_controller.rb:10:in `following'
+Started GET "/users/1" for ::1 at 2021-03-20 20:39:22 +0900
+  [1m[35m (18.9ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (11.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (3.5ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (3.4ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:19
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`follower_id` WHERE `relationships`.`following_id` = 1[0m
+  ↳ app/views/users/show.html.erb:24
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`following_id` WHERE `relationships`.`follower_id` = 1[0m
+  ↳ app/views/users/show.html.erb:29
+  Rendered users/_follow_form.html (Duration: 2.3ms | Allocations: 10)
+  Rendered users/show.html.erb within layouts/application (Duration: 380.2ms | Allocations: 6219)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 639ms (Views: 536.5ms | ActiveRecord: 24.5ms | Allocations: 12098)
+
+
+Started GET "/users/1/following" for ::1 at 2021-03-20 20:39:25 +0900
+Processing by UsersController#following as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:8:in `following'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.8ms | Allocations: 1564)
+
+
+  
+ActionView::MissingTemplate (Missing template users/show_follow, application/show_follow with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "C:/Users/karino daishi/Desktop/osakedaisuki/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/devise-4.7.3/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/kaminari-core-1.2.1/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3.5/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3.5/app/views"
+):
+  
+app/controllers/users_controller.rb:10:in `following'
+Started GET "/users/1/following" for ::1 at 2021-03-20 20:42:11 +0900
+Processing by UsersController#following as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:8:in `following'
+Completed 500 Internal Server Error in 249ms (ActiveRecord: 128.5ms | Allocations: 11053)
+
+
+  
+ActionView::MissingTemplate (Missing template users/follow_form, application/follow_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "C:/Users/karino daishi/Desktop/osakedaisuki/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/devise-4.7.3/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/kaminari-core-1.2.1/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3.5/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3.5/app/views"
+):
+  
+app/controllers/users_controller.rb:11:in `following'
+Started GET "/users/1/following" for ::1 at 2021-03-20 20:42:48 +0900
+Processing by UsersController#following as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:8:in `following'
+  Rendering users/_follow_form.html within layouts/application
+  Rendered users/_follow_form.html within layouts/application (Duration: 0.2ms | Allocations: 8)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 248ms (Views: 83.9ms | ActiveRecord: 90.4ms | Allocations: 14454)
+
+
+Started GET "/users/1" for ::1 at 2021-03-20 20:42:55 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (2.1ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:19
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`follower_id` WHERE `relationships`.`following_id` = 1[0m
+  ↳ app/views/users/show.html.erb:24
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`following_id` WHERE `relationships`.`follower_id` = 1[0m
+  ↳ app/views/users/show.html.erb:29
+  Rendered users/_follow_form.html (Duration: 0.1ms | Allocations: 10)
+  Rendered users/show.html.erb within layouts/application (Duration: 446.9ms | Allocations: 16445)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 587ms (Views: 323.1ms | ActiveRecord: 259.4ms | Allocations: 22236)
+
+
+Started GET "/users/1/followers" for ::1 at 2021-03-20 20:42:58 +0900
+Processing by UsersController#followers as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:16:in `followers'
+  Rendering users/_follow_form.html within layouts/application
+  Rendered users/_follow_form.html within layouts/application (Duration: 0.1ms | Allocations: 8)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 68ms (Views: 61.5ms | ActiveRecord: 0.7ms | Allocations: 5903)
+
+
+Started GET "/users/1/followers" for ::1 at 2021-03-20 20:43:30 +0900
+Processing by UsersController#followers as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:16:in `followers'
+  Rendering users/_follow_form.html within layouts/application
+  Rendered users/_follow_form.html within layouts/application (Duration: 0.1ms | Allocations: 8)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 130ms (Views: 118.6ms | ActiveRecord: 1.1ms | Allocations: 5921)
+
+
+Started GET "/users/show" for ::1 at 2021-03-20 20:45:46 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (16.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = NULL LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+Completed 404 Not Found in 37ms (ActiveRecord: 16.2ms | Allocations: 1226)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=show):
+  
+app/controllers/users_controller.rb:3:in `show'
+Started GET "/users/" for ::1 at 2021-03-20 20:45:55 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+>>>>>>> origin/master
 web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
 web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
 web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
@@ -1790,6 +2490,7 @@ puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
 puma (4.3.7) lib/puma/server.rb:472:in `process_client'
 puma (4.3.7) lib/puma/server.rb:328:in `block in run'
 puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/users/sign_up" for ::1 at 2021-03-20 21:55:44 +0900
   
 NoMethodError (undefined method `before_filter' for ApplicationController:Class
@@ -1957,10 +2658,450 @@ Completed 200 OK in 17ms (Views: 13.5ms | ActiveRecord: 0.0ms | Allocations: 555
 
 
 Started GET "/games" for ::1 at 2021-03-20 21:57:30 +0900
+=======
+Started GET "/" for ::1 at 2021-03-20 20:46:00 +0900
+  
+SyntaxError (C:/Users/karino daishi/Desktop/osakedaisuki/app/controllers/games_controller.rb:59: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/games_controller.rb:59: syntax error, unexpected end, expecting end-of-input
+app/controllers/games_controller.rb:59: syntax error, unexpected end, expecting end-of-input
+app/controllers/games_controller.rb:59: syntax error, unexpected end, expecting end-of-input
+Started GET "/" for ::1 at 2021-03-20 20:46:33 +0900
+Processing by GamesController#top as HTML
+  Rendering games/top.html.erb within layouts/application
+  Rendered games/top.html.erb within layouts/application (Duration: 1.6ms | Allocations: 78)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 192ms (Views: 178.6ms | ActiveRecord: 0.0ms | Allocations: 6846)
+
+
+Started GET "/" for ::1 at 2021-03-20 20:46:52 +0900
+Processing by GamesController#top as HTML
+  Rendering games/top.html.erb within layouts/application
+  Rendered games/top.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 145ms (Views: 143.7ms | ActiveRecord: 0.0ms | Allocations: 5254)
+
+
+Started GET "/games/index" for ::1 at 2021-03-20 20:47:01 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mGame Load (1.0ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`id` = NULL LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:18:in `show'
+Completed 404 Not Found in 134ms (ActiveRecord: 88.9ms | Allocations: 3225)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Game with 'id'=index):
+  
+app/controllers/games_controller.rb:18:in `show'
+Started GET "/games/new" for ::1 at 2021-03-20 20:47:12 +0900
+Processing by GamesController#new as HTML
+  Rendering games/new.html.erb within layouts/application
+  Rendered games/new.html.erb within layouts/application (Duration: 8.6ms | Allocations: 880)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 151ms (Views: 129.2ms | ActiveRecord: 0.0ms | Allocations: 9839)
+
+
+Started POST "/games" for ::1 at 2021-03-20 20:47:19 +0900
+Processing by GamesController#create as HTML
+  Parameters: {"authenticity_token"=>"+wX2ryngRn4e8dc52zvCCgSIUbRnNoJ9efNaQqSIsRix4TmkLq2XeYByPP6F4DtqpYft7zQB2rN4Pxiex1Nheg==", "game"=>{"title"=>"あっり", "body"=>"カロン"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:26:in `create'
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:27:in `create'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:27:in `create'
+  [1m[36mGame Create (22.3ms)[0m  [1m[32mINSERT INTO `games` (`body`, `title`, `user_id`, `created_at`, `updated_at`) VALUES ('カロン', 'あっり', 1, '2021-03-20 11:47:20.086387', '2021-03-20 11:47:20.086387')[0m
+  ↳ app/controllers/games_controller.rb:27:in `create'
+  [1m[35m (9.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:27:in `create'
+Redirected to http://localhost:3000/games
+Completed 302 Found in 183ms (ActiveRecord: 115.2ms | Allocations: 12579)
+
+
+Started GET "/games" for ::1 at 2021-03-20 20:47:20 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (1.8ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:14
+  [1m[36mLike Exists? (6.8ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 2[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (73.7ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 3[0m
+  ↳ app/views/games/index.html.erb:17
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:40
+  Rendered games/index.html.erb within layouts/application (Duration: 505.5ms | Allocations: 20283)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 573ms (Views: 412.3ms | ActiveRecord: 154.7ms | Allocations: 25742)
+
+
+Started GET "/users/1" for ::1 at 2021-03-20 20:47:24 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (2.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:19
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`follower_id` WHERE `relationships`.`following_id` = 1[0m
+  ↳ app/views/users/show.html.erb:24
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`following_id` WHERE `relationships`.`follower_id` = 1[0m
+  ↳ app/views/users/show.html.erb:29
+  Rendered users/_follow_form.html (Duration: 0.3ms | Allocations: 10)
+  Rendered users/show.html.erb within layouts/application (Duration: 129.1ms | Allocations: 10052)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 220ms (Views: 112.1ms | ActiveRecord: 85.6ms | Allocations: 16135)
+
+
+Started GET "/users/1/following" for ::1 at 2021-03-20 20:48:07 +0900
+Processing by UsersController#following as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:8:in `following'
+  Rendering users/_follow_form.html within layouts/application
+  Rendered users/_follow_form.html within layouts/application (Duration: 0.1ms | Allocations: 8)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 65ms (Views: 60.9ms | ActiveRecord: 1.0ms | Allocations: 5905)
+
+
+Started GET "/users/1/following" for ::1 at 2021-03-20 20:49:33 +0900
+Processing by UsersController#following as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:8:in `following'
+  Rendering users/_follow_form.html within layouts/application
+  Rendered users/_follow_form.html within layouts/application (Duration: 0.1ms | Allocations: 8)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 66ms (Views: 61.3ms | ActiveRecord: 1.0ms | Allocations: 5905)
+
+
+Started GET "/users/1" for ::1 at 2021-03-20 20:51:58 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (1.3ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:19
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`follower_id` WHERE `relationships`.`following_id` = 1[0m
+  ↳ app/views/users/show.html.erb:24
+  [1m[35m (5.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`following_id` WHERE `relationships`.`follower_id` = 1[0m
+  ↳ app/views/users/show.html.erb:29
+  Rendered users/_follow_form.html.erb (Duration: 1.2ms | Allocations: 188)
+  Rendered users/show.html.erb within layouts/application (Duration: 73.1ms | Allocations: 6839)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 271ms (Views: 243.4ms | ActiveRecord: 13.4ms | Allocations: 13832)
+
+
+Started GET "/users/1/following" for ::1 at 2021-03-20 20:52:01 +0900
+Processing by UsersController#following as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:8:in `following'
+  Rendering users/_follow_form.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/_follow_form.html.erb:1
+  Rendered users/_follow_form.html.erb within layouts/application (Duration: 7.2ms | Allocations: 969)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 142ms (Views: 134.6ms | ActiveRecord: 2.7ms | Allocations: 6985)
+
+
+Started GET "/users/1/followers" for ::1 at 2021-03-20 20:52:21 +0900
+Processing by UsersController#followers as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:16:in `followers'
+  Rendering users/_follow_form.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/_follow_form.html.erb:1
+  Rendered users/_follow_form.html.erb within layouts/application (Duration: 6.0ms | Allocations: 967)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 90ms (Views: 84.1ms | ActiveRecord: 1.5ms | Allocations: 6872)
+
+
+Started GET "/games" for ::1 at 2021-03-20 20:52:30 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (1.0ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:14
+  [1m[36mLike Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 2[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 1 AND `likes`.`game_id` = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 3[0m
+  ↳ app/views/games/index.html.erb:17
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:40
+  Rendered games/index.html.erb within layouts/application (Duration: 118.6ms | Allocations: 14881)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 199ms (Views: 184.5ms | ActiveRecord: 9.3ms | Allocations: 20996)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-03-20 20:52:33 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.9ms | Allocations: 2112)
+
+
+Started GET "/" for ::1 at 2021-03-20 20:52:34 +0900
+Processing by GamesController#top as HTML
+  Rendering games/top.html.erb within layouts/application
+  Rendered games/top.html.erb within layouts/application (Duration: 0.8ms | Allocations: 71)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 84ms (Views: 79.9ms | ActiveRecord: 0.0ms | Allocations: 5486)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-03-20 20:52:47 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.7ms | Allocations: 1932)
+
+
+Started GET "/" for ::1 at 2021-03-20 20:52:48 +0900
+Processing by GamesController#top as HTML
+  Rendering games/top.html.erb within layouts/application
+  Rendered games/top.html.erb within layouts/application (Duration: 0.5ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 76ms (Views: 73.0ms | ActiveRecord: 0.0ms | Allocations: 5275)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-03-20 20:52:59 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms | Allocations: 1916)
+
+
+Started GET "/" for ::1 at 2021-03-20 20:52:59 +0900
+Processing by GamesController#top as HTML
+  Rendering games/top.html.erb within layouts/application
+  Rendered games/top.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 157ms (Views: 155.1ms | ActiveRecord: 0.0ms | Allocations: 5280)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-03-20 20:53:04 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms | Allocations: 1930)
+
+
+Started GET "/" for ::1 at 2021-03-20 20:53:04 +0900
+Processing by GamesController#top as HTML
+  Rendering games/top.html.erb within layouts/application
+  Rendered games/top.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 80ms (Views: 78.7ms | ActiveRecord: 0.0ms | Allocations: 5260)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-03-20 20:53:15 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GMMd2O7TSbXTW8XODKSNmvxWg1ni9kqNJmFFUZ/GFEDAP/+HRnYDBT+KHmTvCYjvzVOAckFoiWDp4lGbJinl3Q=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 134ms (ActiveRecord: 0.6ms | Allocations: 3363)
+
+
+Started GET "/" for ::1 at 2021-03-20 20:53:16 +0900
+Processing by GamesController#top as HTML
+  Rendering games/top.html.erb within layouts/application
+  Rendered games/top.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 138ms (Views: 136.4ms | ActiveRecord: 0.0ms | Allocations: 5250)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-03-20 20:53:31 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 1.6ms | Allocations: 203)
+  Rendered users/shared/_links.html.erb (Duration: 3.1ms | Allocations: 515)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 99.5ms | Allocations: 3081)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 208ms (Views: 197.9ms | ActiveRecord: 0.0ms | Allocations: 9778)
+
+
+Started POST "/users" for ::1 at 2021-03-20 20:53:45 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"9jUJ4pT9eWmptO/QknGq38uzEzaFhu2RIjbXjAJToMHbmt/V1go5RfbN0F67gUgJG0/OqfeztSRTVnorsfGMRw==", "user"=>{"name"=>"kari", "email"=>"d@d", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (3.2ms)[0m  [1m[34mSELECT 1 AS one FROM `users` WHERE `users`.`email` = BINARY 'd@d' LIMIT 1[0m
+  [1m[36mUser Create (9.9ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `name`, `created_at`, `updated_at`) VALUES ('d@d', '$2a$12$TgOpGFkBYt2X2WKh.faJfu96nAfXPLciN8hteX6ZLQzRPYyJhwrkm', 'kari', '2021-03-20 11:53:47.364522', '2021-03-20 11:53:47.364522')[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1662ms (ActiveRecord: 16.5ms | Allocations: 12925)
+
+
+Started GET "/" for ::1 at 2021-03-20 20:53:47 +0900
+Processing by GamesController#top as HTML
+  Rendering games/top.html.erb within layouts/application
+  Rendered games/top.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 137ms (Views: 135.2ms | ActiveRecord: 0.0ms | Allocations: 5257)
+
+
+Started GET "/games/new" for ::1 at 2021-03-20 20:54:02 +0900
+Processing by GamesController#new as HTML
+  Rendering games/new.html.erb within layouts/application
+  Rendered games/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 804)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 85ms (Views: 80.4ms | ActiveRecord: 0.0ms | Allocations: 6197)
+
+
+Started POST "/games" for ::1 at 2021-03-20 20:54:14 +0900
+Processing by GamesController#create as HTML
+  Parameters: {"authenticity_token"=>"a4RGck7zgUfFGu7qXBOJAOLZtNHwusIlYPm4dWblZc5GK5BFDATBa5pj0WR142vWMiVpToKPmpARmRXS1UdJSA==", "game"=>{"title"=>"ああああ", "body"=>"ありごつう"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:26:in `create'
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:27:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:27:in `create'
+  [1m[36mGame Create (2.5ms)[0m  [1m[32mINSERT INTO `games` (`body`, `title`, `user_id`, `created_at`, `updated_at`) VALUES ('ありごつう', 'ああああ', 2, '2021-03-20 11:54:14.332744', '2021-03-20 11:54:14.332744')[0m
+  ↳ app/controllers/games_controller.rb:27:in `create'
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:27:in `create'
+Redirected to http://localhost:3000/games
+Completed 302 Found in 47ms (ActiveRecord: 14.2ms | Allocations: 5122)
+
+
+Started GET "/games" for ::1 at 2021-03-20 20:54:14 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (0.8ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:14
+  [1m[36mLike Exists? (4.5ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (74.9ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 2[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 3[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[35m (9.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:40
+  Rendered games/index.html.erb within layouts/application (Duration: 184.4ms | Allocations: 12117)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 263ms (Views: 161.8ms | ActiveRecord: 98.6ms | Allocations: 17466)
+
+
+Started GET "/games/1" for ::1 at 2021-03-20 20:54:27 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:18:in `show'
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/show.html.erb:8
+  [1m[36mLike Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/show.html.erb:15
+  Rendered games/show.html.erb within layouts/application (Duration: 26.9ms | Allocations: 3125)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 167ms (Views: 155.3ms | ActiveRecord: 4.3ms | Allocations: 9132)
+
+
+Started GET "/" for ::1 at 2021-03-20 20:54:32 +0900
+Processing by GamesController#top as HTML
+  Rendering games/top.html.erb within layouts/application
+  Rendered games/top.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 74ms (Views: 72.9ms | ActiveRecord: 0.0ms | Allocations: 5250)
+
+
+Started GET "/games/new" for ::1 at 2021-03-20 20:54:44 +0900
+Processing by GamesController#new as HTML
+  Rendering games/new.html.erb within layouts/application
+  Rendered games/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 583)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 74ms (Views: 72.6ms | ActiveRecord: 0.0ms | Allocations: 5850)
+
+
+Started POST "/games" for ::1 at 2021-03-20 20:54:49 +0900
+Processing by GamesController#create as HTML
+  Parameters: {"authenticity_token"=>"D20XcQnyGNCRWoZDhj+KO4U+9+6yeUHpO9jdFBgEN1siwsFGSwVY/M4juc2vz2jtVcIqccBMGVxKuHCzq6Yb3Q==", "game"=>{"title"=>"ああああ", "body"=>"カロン"}, "commit"=>"投稿する"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:26:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/games_controller.rb:27:in `create'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:27:in `create'
+  [1m[36mGame Create (0.9ms)[0m  [1m[32mINSERT INTO `games` (`body`, `title`, `user_id`, `created_at`, `updated_at`) VALUES ('カロン', 'ああああ', 2, '2021-03-20 11:54:49.936357', '2021-03-20 11:54:49.936357')[0m
+  ↳ app/controllers/games_controller.rb:27:in `create'
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/games_controller.rb:27:in `create'
+Redirected to http://localhost:3000/games
+Completed 302 Found in 49ms (ActiveRecord: 6.5ms | Allocations: 5119)
+
+
+Started GET "/games" for ::1 at 2021-03-20 20:54:50 +0900
+>>>>>>> origin/master
 Processing by GamesController#index as HTML
   Rendering games/index.html.erb within layouts/application
   [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
   ↳ app/views/games/index.html.erb:9
+<<<<<<< HEAD
   Rendered games/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1216)
 [Webpacker] Everything's up-to-date. Nothing to do
 Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.6ms | Allocations: 5590)
@@ -2175,5 +3316,1471 @@ Processing by GamesController#index as HTML
   Rendered games/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 2121)
 [Webpacker] Everything's up-to-date. Nothing to do
 Completed 200 OK in 18ms (Views: 15.5ms | ActiveRecord: 1.2ms | Allocations: 6507)
+=======
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:14
+  [1m[36mLike Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 2[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 3[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:40
+  Rendered games/index.html.erb within layouts/application (Duration: 162.0ms | Allocations: 12112)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 235ms (Views: 220.3ms | ActiveRecord: 12.0ms | Allocations: 17467)
+
+
+Started GET "/games" for ::1 at 2021-03-20 20:57:02 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (13.4ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:14
+  [1m[36mLike Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 2[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (1.8ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 3[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:40
+  Rendered games/index.html.erb within layouts/application (Duration: 384.6ms | Allocations: 14886)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 689ms (Views: 567.9ms | ActiveRecord: 26.3ms | Allocations: 21361)
+
+
+Started GET "/games" for ::1 at 2021-03-20 20:57:13 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (2.0ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:14
+  [1m[36mLike Exists? (6.7ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 2[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 3[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:40
+  Rendered games/index.html.erb within layouts/application (Duration: 108.1ms | Allocations: 12121)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 272ms (Views: 241.5ms | ActiveRecord: 27.9ms | Allocations: 17474)
+
+
+Started GET "/games" for ::1 at 2021-03-20 20:57:51 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (Duration: 201.7ms | Allocations: 1577)
+Completed 500 Internal Server Error in 257ms (ActiveRecord: 0.0ms | Allocations: 3098)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>osakedaisuki</h1>
+<h3>Tweet一覧</h3>
+<h3>投稿を検索</h3>
+<%= form_tag({controller:"games",action:"index"}, method: :get) do %>
+    <%= text_field_tag :search %>
+    <%= submit_tag '検索する'  %>
+<% end %>
+<div class="tweets-container">
+    <% @game.each do |g| %>
+    <div class="tweet">
+        <%= link_to game_path(g.id)<%= g.user.email %>
+        <%= g.title %>
+        <%= g.body %>
+        <% if user_signed_in? %>
+        <% if current_user.already_liked?(g) %>
+            <%= link_to game_like_path(id: g.id, game_id: g.id), method: :delete do %>
+                <i class="fas fa-heart"></i><%= g.likes.count %>
+            <% end %>
+        <% else %>
+            <%= link_to game_likes_path(id: g.id, game_id: g.id), method: :post do %>
+                <i class="far fa-heart"></i><%= g.likes.count %>
+            <% end %>
+        <% end %>
+    <% else %>
+        <i class="far fa-heart"></i><%= g.likes.count %>
+    <% end %>
+        <%= g.created_at %>
+        <%= link_to "詳細へ", game_path(g.id) %>
+        <%= link_to "編集する", edit_game_path(g.id) %>
+        <%= button_to "削除する", game_path(g.id), method: :delete %>
+    </div>
+    <% end %>
+    <% if user_signed_in? %>
+        <%= link_to "マイページへ", user_path(current_user.id) %>　
+    <% end %>
+    <%= link_to "ログイン", games_path %>
+    <%= link_to "新規登録", new_user_registration_path %>
+    <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+    <%= link_to "新規投稿", new_game_path %>
+    <%= paginate @game %>
+</div>
+):
+1:    <h1>osakedaisuki</h1>
+2:    <h3>Tweet一覧</h3>
+3:    <h3>投稿を検索</h3>
+4:    <%= form_tag({controller:"games",action:"index"}, method: :get) do %>
+5:        <%= text_field_tag :search %>
+6:        <%= submit_tag '検索する'  %>
+7:    <% end %>
+8:    <div class="tweets-container">
+9:        <% @game.each do |g| %>
+10:        <div class="tweet">
+11:            <%= link_to game_path(g.id)<%= g.user.email %>
+12:            <%= g.title %>
+13:            <%= g.body %>
+14:            <% if user_signed_in? %>
+15:            <% if current_user.already_liked?(g) %>
+16:                <%= link_to game_like_path(id: g.id, game_id: g.id), method: :delete do %>
+17:                    <i class="fas fa-heart"></i><%= g.likes.count %>
+18:                <% end %>
+19:            <% else %>
+20:                <%= link_to game_likes_path(id: g.id, game_id: g.id), method: :post do %>
+21:                    <i class="far fa-heart"></i><%= g.likes.count %>
+22:                <% end %>
+23:            <% end %>
+24:        <% else %>
+25:            <i class="far fa-heart"></i><%= g.likes.count %>
+26:        <% end %>
+27:            <%= g.created_at %>
+28:            <%= link_to "詳細へ", game_path(g.id) %>
+29:            <%= link_to "編集する", edit_game_path(g.id) %>
+30:            <%= button_to "削除する", game_path(g.id), method: :delete %>
+31:        </div>
+32:        <% end %>
+33:        <% if user_signed_in? %>
+34:            <%= link_to "マイページへ", user_path(current_user.id) %>　
+35:        <% end %>
+36:        <%= link_to "ログイン", games_path %>
+37:        <%= link_to "新規登録", new_user_registration_path %>
+38:        <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+39:        <%= link_to "新規投稿", new_game_path %>
+40:        <%= paginate @game %>
+41:    </div>
+  
+app/views/games/index.html.erb:32: syntax error, unexpected end, expecting ')'
+app/views/games/index.html.erb:43: syntax error, unexpected end, expecting ')'
+app/views/games/index.html.erb:32: syntax error, unexpected end, expecting ')'
+app/views/games/index.html.erb:43: syntax error, unexpected end, expecting ')'
+app/views/games/index.html.erb:32: syntax error, unexpected end, expecting ')'
+app/views/games/index.html.erb:43: syntax error, unexpected end, expecting ')'
+app/views/games/index.html.erb:32: syntax error, unexpected end, expecting ')'
+app/views/games/index.html.erb:43: syntax error, unexpected end, expecting ')'
+app/views/games/index.html.erb:32: syntax error, unexpected end, expecting ')'
+app/views/games/index.html.erb:43: syntax error, unexpected end, expecting ')'
+app/views/games/index.html.erb:32: syntax error, unexpected end, expecting ')'
+app/views/games/index.html.erb:43: syntax error, unexpected end, expecting ')'
+Started GET "/games" for ::1 at 2021-03-20 20:58:27 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  Rendered games/index.html.erb within layouts/application (Duration: 167.0ms | Allocations: 1572)
+Completed 500 Internal Server Error in 213ms (ActiveRecord: 0.0ms | Allocations: 3093)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>osakedaisuki</h1>
+<h3>Tweet一覧</h3>
+<h3>投稿を検索</h3>
+<%= form_tag({controller:"games",action:"index"}, method: :get) do %>
+    <%= text_field_tag :search %>
+    <%= submit_tag '検索する'  %>
+<% end %>
+<div class="tweets-container">
+    <% @game.each do |g| %>
+    <div class="tweet">
+        <%= link_to game_path(g.id)<%= g.user.email %>%>
+        <%= g.title %>
+        <%= g.body %>
+        <% if user_signed_in? %>
+        <% if current_user.already_liked?(g) %>
+            <%= link_to game_like_path(id: g.id, game_id: g.id), method: :delete do %>
+                <i class="fas fa-heart"></i><%= g.likes.count %>
+            <% end %>
+        <% else %>
+            <%= link_to game_likes_path(id: g.id, game_id: g.id), method: :post do %>
+                <i class="far fa-heart"></i><%= g.likes.count %>
+            <% end %>
+        <% end %>
+    <% else %>
+        <i class="far fa-heart"></i><%= g.likes.count %>
+    <% end %>
+        <%= g.created_at %>
+        <%= link_to "詳細へ", game_path(g.id) %>
+        <%= link_to "編集する", edit_game_path(g.id) %>
+        <%= button_to "削除する", game_path(g.id), method: :delete %>
+    </div>
+    <% end %>
+    <% if user_signed_in? %>
+        <%= link_to "マイページへ", user_path(current_user.id) %>　
+    <% end %>
+    <%= link_to "ログイン", games_path %>
+    <%= link_to "新規登録", new_user_registration_path %>
+    <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+    <%= link_to "新規投稿", new_game_path %>
+    <%= paginate @game %>
+</div>
+):
+1:    <h1>osakedaisuki</h1>
+2:    <h3>Tweet一覧</h3>
+3:    <h3>投稿を検索</h3>
+4:    <%= form_tag({controller:"games",action:"index"}, method: :get) do %>
+5:        <%= text_field_tag :search %>
+6:        <%= submit_tag '検索する'  %>
+7:    <% end %>
+8:    <div class="tweets-container">
+9:        <% @game.each do |g| %>
+10:        <div class="tweet">
+11:            <%= link_to game_path(g.id)<%= g.user.email %>%>
+12:            <%= g.title %>
+13:            <%= g.body %>
+14:            <% if user_signed_in? %>
+15:            <% if current_user.already_liked?(g) %>
+16:                <%= link_to game_like_path(id: g.id, game_id: g.id), method: :delete do %>
+17:                    <i class="fas fa-heart"></i><%= g.likes.count %>
+18:                <% end %>
+19:            <% else %>
+20:                <%= link_to game_likes_path(id: g.id, game_id: g.id), method: :post do %>
+21:                    <i class="far fa-heart"></i><%= g.likes.count %>
+22:                <% end %>
+23:            <% end %>
+24:        <% else %>
+25:            <i class="far fa-heart"></i><%= g.likes.count %>
+26:        <% end %>
+27:            <%= g.created_at %>
+28:            <%= link_to "詳細へ", game_path(g.id) %>
+29:            <%= link_to "編集する", edit_game_path(g.id) %>
+30:            <%= button_to "削除する", game_path(g.id), method: :delete %>
+31:        </div>
+32:        <% end %>
+33:        <% if user_signed_in? %>
+34:            <%= link_to "マイページへ", user_path(current_user.id) %>　
+35:        <% end %>
+36:        <%= link_to "ログイン", games_path %>
+37:        <%= link_to "新規登録", new_user_registration_path %>
+38:        <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+39:        <%= link_to "新規投稿", new_game_path %>
+40:        <%= paginate @game %>
+41:    </div>
+  
+app/views/games/index.html.erb:32: syntax error, unexpected end, expecting ')'
+app/views/games/index.html.erb:43: syntax error, unexpected end, expecting ')'
+app/views/games/index.html.erb:32: syntax error, unexpected end, expecting ')'
+app/views/games/index.html.erb:43: syntax error, unexpected end, expecting ')'
+app/views/games/index.html.erb:32: syntax error, unexpected end, expecting ')'
+app/views/games/index.html.erb:43: syntax error, unexpected end, expecting ')'
+app/views/games/index.html.erb:32: syntax error, unexpected end, expecting ')'
+app/views/games/index.html.erb:43: syntax error, unexpected end, expecting ')'
+app/views/games/index.html.erb:32: syntax error, unexpected end, expecting ')'
+app/views/games/index.html.erb:43: syntax error, unexpected end, expecting ')'
+app/views/games/index.html.erb:32: syntax error, unexpected end, expecting ')'
+app/views/games/index.html.erb:43: syntax error, unexpected end, expecting ')'
+Started GET "/games" for ::1 at 2021-03-20 20:59:25 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (3.4ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:14
+  [1m[36mLike Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 2[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 3[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:40
+  Rendered games/index.html.erb within layouts/application (Duration: 251.1ms | Allocations: 14961)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 348ms (Views: 327.2ms | ActiveRecord: 14.6ms | Allocations: 21436)
+
+
+Started GET "/games/1" for ::1 at 2021-03-20 20:59:31 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:18:in `show'
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/show.html.erb:8
+  [1m[36mLike Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/show.html.erb:15
+  Rendered games/show.html.erb within layouts/application (Duration: 15.6ms | Allocations: 3115)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 79ms (Views: 68.1ms | ActiveRecord: 2.7ms | Allocations: 9127)
+
+
+Started GET "/" for ::1 at 2021-03-20 20:59:44 +0900
+Processing by GamesController#top as HTML
+  Rendering games/top.html.erb within layouts/application
+  Rendered games/top.html.erb within layouts/application (Duration: 1.0ms | Allocations: 71)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 59ms (Views: 55.2ms | ActiveRecord: 0.0ms | Allocations: 5464)
+
+
+Started GET "/games/index" for ::1 at 2021-03-20 21:01:03 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mGame Load (4.4ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`id` = NULL LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:18:in `show'
+Completed 404 Not Found in 12ms (ActiveRecord: 4.4ms | Allocations: 1218)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Game with 'id'=index):
+  
+app/controllers/games_controller.rb:18:in `show'
+Started GET "/games/" for ::1 at 2021-03-20 21:03:52 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (1.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:14
+  [1m[36mLike Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 2[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (52.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 3[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:40
+  Rendered games/index.html.erb within layouts/application (Duration: 189.8ms | Allocations: 14953)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 292ms (Views: 223.0ms | ActiveRecord: 62.6ms | Allocations: 21423)
+
+
+Started GET "/games/index" for ::1 at 2021-03-20 21:04:06 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[36mGame Load (0.9ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`id` = NULL LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:18:in `show'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.9ms | Allocations: 1212)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Game with 'id'=index):
+  
+app/controllers/games_controller.rb:18:in `show'
+Started GET "/games" for ::1 at 2021-03-20 21:06:01 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (1.4ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:14
+  [1m[36mLike Exists? (3.3ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 2[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 3[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:40
+  Rendered games/index.html.erb within layouts/application (Duration: 65.9ms | Allocations: 12193)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 131ms (Views: 112.6ms | ActiveRecord: 16.6ms | Allocations: 17537)
+
+
+Started GET "/games/2" for ::1 at 2021-03-20 21:06:10 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:18:in `show'
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/show.html.erb:8
+  [1m[36mLike Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 2[0m
+  ↳ app/views/games/show.html.erb:15
+  Rendered games/show.html.erb within layouts/application (Duration: 16.5ms | Allocations: 3115)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 78ms (Views: 69.6ms | ActiveRecord: 2.9ms | Allocations: 9130)
+
+
+Started GET "/" for ::1 at 2021-03-20 21:06:14 +0900
+Processing by GamesController#top as HTML
+  Rendering games/top.html.erb within layouts/application
+  Rendered games/top.html.erb within layouts/application (Duration: 0.8ms | Allocations: 71)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 60ms (Views: 55.3ms | ActiveRecord: 0.0ms | Allocations: 5462)
+
+
+Started GET "/" for ::1 at 2021-03-20 21:09:53 +0900
+Processing by GamesController#top as HTML
+  Rendering games/top.html.erb within layouts/application
+  Rendered games/top.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 139ms (Views: 134.2ms | ActiveRecord: 0.0ms | Allocations: 5254)
+
+
+Started GET "/user/1" for ::1 at 2021-03-20 21:10:08 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/user/1"):
+  
+actionpack (6.0.3.5) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.5) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.5) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.5) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.5) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.5) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/1" for ::1 at 2021-03-20 21:10:19 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (1.3ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (3.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:19
+  [1m[35m (3.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`follower_id` WHERE `relationships`.`following_id` = 1[0m
+  ↳ app/views/users/show.html.erb:24
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`following_id` WHERE `relationships`.`follower_id` = 1[0m
+  ↳ app/views/users/show.html.erb:29
+  Rendered users/show.html.erb within layouts/application (Duration: 171.1ms | Allocations: 8315)
+Completed 500 Internal Server Error in 215ms (ActiveRecord: 14.8ms | Allocations: 10183)
+
+
+  
+ActionView::Template::Error (Missing partial users/__follow_form, application/__follow_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "C:/Users/karino daishi/Desktop/osakedaisuki/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/devise-4.7.3/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/kaminari-core-1.2.1/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3.5/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3.5/app/views"
+):
+    30: <% end %>
+    31: </div>
+    32: <div>
+    33: <%= render "_follow_form" %>
+    34: </div>
+    35: 
+    36: <%= link_to "投稿一覧に戻る", games_path %>
+  
+app/views/users/show.html.erb:33
+Started GET "/users/1" for ::1 at 2021-03-20 21:10:57 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (1.3ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (1.2ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:19
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`follower_id` WHERE `relationships`.`following_id` = 1[0m
+  ↳ app/views/users/show.html.erb:24
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`following_id` WHERE `relationships`.`follower_id` = 1[0m
+  ↳ app/views/users/show.html.erb:29
+  [1m[36mRelationship Load (0.7ms)[0m  [1m[34mSELECT `relationships`.* FROM `relationships` WHERE `relationships`.`follower_id` = 2 AND `relationships`.`following_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `following?'
+  Rendered users/_follow.html.erb (Duration: 5.3ms | Allocations: 341)
+  Rendered users/_follow_form.html.erb (Duration: 18.8ms | Allocations: 1781)
+  Rendered users/show.html.erb within layouts/application (Duration: 126.0ms | Allocations: 8403)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 292ms (Views: 273.3ms | ActiveRecord: 10.4ms | Allocations: 15414)
+
+
+Started GET "/games" for ::1 at 2021-03-20 21:11:01 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:14
+  [1m[36mLike Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 2[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 3[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:40
+  Rendered games/index.html.erb within layouts/application (Duration: 100.6ms | Allocations: 14941)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 176ms (Views: 164.1ms | ActiveRecord: 7.5ms | Allocations: 21054)
+
+
+Started GET "/games/3" for ::1 at 2021-03-20 21:11:05 +0900
+Processing by GamesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`id` = 3 LIMIT 1[0m
+  ↳ app/controllers/games_controller.rb:18:in `show'
+  Rendering games/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/show.html.erb:8
+  [1m[36mLike Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 3[0m
+  ↳ app/views/games/show.html.erb:15
+  Rendered games/show.html.erb within layouts/application (Duration: 28.1ms | Allocations: 3114)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 90ms (Views: 80.3ms | ActiveRecord: 2.7ms | Allocations: 9149)
+
+
+Started GET "/" for ::1 at 2021-03-20 21:11:07 +0900
+Processing by GamesController#top as HTML
+  Rendering games/top.html.erb within layouts/application
+  Rendered games/top.html.erb within layouts/application (Duration: 0.9ms | Allocations: 76)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 58ms (Views: 54.3ms | ActiveRecord: 0.0ms | Allocations: 5463)
+
+
+Started GET "/users/1" for ::1 at 2021-03-20 21:11:19 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (1.9ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:19
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`follower_id` WHERE `relationships`.`following_id` = 1[0m
+  ↳ app/views/users/show.html.erb:24
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`following_id` WHERE `relationships`.`follower_id` = 1[0m
+  ↳ app/views/users/show.html.erb:29
+  [1m[36mRelationship Load (0.6ms)[0m  [1m[34mSELECT `relationships`.* FROM `relationships` WHERE `relationships`.`follower_id` = 2 AND `relationships`.`following_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `following?'
+  Rendered users/_follow.html.erb (Duration: 0.6ms | Allocations: 178)
+  Rendered users/_follow_form.html.erb (Duration: 4.9ms | Allocations: 1158)
+  Rendered users/show.html.erb within layouts/application (Duration: 35.8ms | Allocations: 7193)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 108ms (Views: 95.3ms | ActiveRecord: 7.9ms | Allocations: 13076)
+
+
+Started POST "/relationships" for ::1 at 2021-03-20 21:11:26 +0900
+Processing by RelationshipsController#create as JS
+  Parameters: {"following_id"=>"1", "commit"=>"フォローする"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:3:in `create'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:4:in `create'
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mRelationship Create (7.3ms)[0m  [1m[32mINSERT INTO `relationships` (`follower_id`, `following_id`, `created_at`, `updated_at`) VALUES (2, 1, '2021-03-20 12:11:27.046011', '2021-03-20 12:11:27.046011')[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:24:in `follow'
+  Rendering relationships/create.js
+  Rendered relationships/create.js (Duration: 28.1ms | Allocations: 67)
+Completed 200 OK in 205ms (Views: 80.1ms | ActiveRecord: 31.2ms | Allocations: 12965)
+
+
+Started GET "/users/1" for ::1 at 2021-03-20 21:11:31 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (1.4ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (1.5ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:19
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`follower_id` WHERE `relationships`.`following_id` = 1[0m
+  ↳ app/views/users/show.html.erb:24
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`following_id` WHERE `relationships`.`follower_id` = 1[0m
+  ↳ app/views/users/show.html.erb:29
+  [1m[36mRelationship Load (0.7ms)[0m  [1m[34mSELECT `relationships`.* FROM `relationships` WHERE `relationships`.`follower_id` = 2 AND `relationships`.`following_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `following?'
+  Rendered users/_unfollow.html.erb (Duration: 2.0ms | Allocations: 315)
+  Rendered users/_follow_form.html.erb (Duration: 13.2ms | Allocations: 1472)
+  Rendered users/show.html.erb within layouts/application (Duration: 179.3ms | Allocations: 7507)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 249ms (Views: 228.9ms | ActiveRecord: 11.2ms | Allocations: 13390)
+
+
+Started GET "/users/1" for ::1 at 2021-03-20 21:14:04 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (0.9ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:19
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`follower_id` WHERE `relationships`.`following_id` = 1[0m
+  ↳ app/views/users/show.html.erb:24
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`following_id` WHERE `relationships`.`follower_id` = 1[0m
+  ↳ app/views/users/show.html.erb:29
+  [1m[36mRelationship Load (18.7ms)[0m  [1m[34mSELECT `relationships`.* FROM `relationships` WHERE `relationships`.`follower_id` = 2 AND `relationships`.`following_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `following?'
+  Rendered users/_unfollow.html.erb (Duration: 2.3ms | Allocations: 305)
+  Rendered users/_follow_form.html.erb (Duration: 41.4ms | Allocations: 1624)
+  Rendered users/show.html.erb within layouts/application (Duration: 80.8ms | Allocations: 8242)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 171ms (Views: 134.9ms | ActiveRecord: 26.7ms | Allocations: 15259)
+
+
+Started DELETE "/relationships/1" for ::1 at 2021-03-20 21:14:07 +0900
+Processing by RelationshipsController#destroy as JS
+  Parameters: {"commit"=>"フォロー解除", "id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:8:in `destroy'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:9:in `destroy'
+  [1m[36mRelationship Load (0.6ms)[0m  [1m[34mSELECT `relationships`.* FROM `relationships` WHERE `relationships`.`follower_id` = 2 AND `relationships`.`following_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[36mRelationship Destroy (5.8ms)[0m  [1m[31mDELETE FROM `relationships` WHERE `relationships`.`id` = 1[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  Rendering relationships/destroy.js.erb
+  Rendered users/_follow.html.erb (Duration: 2.6ms | Allocations: 341)
+  Rendered relationships/destroy.js.erb (Duration: 10.8ms | Allocations: 738)
+Completed 200 OK in 133ms (Views: 99.8ms | ActiveRecord: 10.3ms | Allocations: 7564)
+
+
+Started GET "/users/1" for ::1 at 2021-03-20 21:14:11 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (0.8ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:19
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`follower_id` WHERE `relationships`.`following_id` = 1[0m
+  ↳ app/views/users/show.html.erb:24
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`following_id` WHERE `relationships`.`follower_id` = 1[0m
+  ↳ app/views/users/show.html.erb:29
+  [1m[36mRelationship Load (0.6ms)[0m  [1m[34mSELECT `relationships`.* FROM `relationships` WHERE `relationships`.`follower_id` = 2 AND `relationships`.`following_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `following?'
+  Rendered users/_follow.html.erb (Duration: 0.6ms | Allocations: 178)
+  Rendered users/_follow_form.html.erb (Duration: 8.0ms | Allocations: 1270)
+  Rendered users/show.html.erb within layouts/application (Duration: 39.4ms | Allocations: 7303)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 163ms (Views: 146.9ms | ActiveRecord: 8.8ms | Allocations: 13197)
+
+
+Started POST "/relationships" for ::1 at 2021-03-20 21:14:13 +0900
+Processing by RelationshipsController#create as JS
+  Parameters: {"following_id"=>"1", "commit"=>"フォローする"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:3:in `create'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:4:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mRelationship Create (0.9ms)[0m  [1m[32mINSERT INTO `relationships` (`follower_id`, `following_id`, `created_at`, `updated_at`) VALUES (2, 1, '2021-03-20 12:14:13.864197', '2021-03-20 12:14:13.864197')[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:24:in `follow'
+  Rendering relationships/create.js.erb
+  Rendered users/_unfollow.html.erb (Duration: 0.8ms | Allocations: 179)
+  Rendered relationships/create.js.erb (Duration: 21.3ms | Allocations: 533)
+Completed 200 OK in 64ms (Views: 22.8ms | ActiveRecord: 5.7ms | Allocations: 8311)
+
+
+Started GET "/users/1" for ::1 at 2021-03-20 21:14:17 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (0.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (0.9ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:19
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`follower_id` WHERE `relationships`.`following_id` = 1[0m
+  ↳ app/views/users/show.html.erb:24
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`following_id` WHERE `relationships`.`follower_id` = 1[0m
+  ↳ app/views/users/show.html.erb:29
+  [1m[36mRelationship Load (0.9ms)[0m  [1m[34mSELECT `relationships`.* FROM `relationships` WHERE `relationships`.`follower_id` = 2 AND `relationships`.`following_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `following?'
+  Rendered users/_unfollow.html.erb (Duration: 0.7ms | Allocations: 168)
+  Rendered users/_follow_form.html.erb (Duration: 6.2ms | Allocations: 1178)
+  Rendered users/show.html.erb within layouts/application (Duration: 42.5ms | Allocations: 7210)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 117ms (Views: 105.3ms | ActiveRecord: 6.5ms | Allocations: 13097)
+
+
+Started GET "/users/1" for ::1 at 2021-03-20 21:16:08 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (1.3ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (1.9ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:19
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`follower_id` WHERE `relationships`.`following_id` = 1[0m
+  ↳ app/views/users/show.html.erb:24
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`following_id` WHERE `relationships`.`follower_id` = 1[0m
+  ↳ app/views/users/show.html.erb:29
+  [1m[36mRelationship Load (1.4ms)[0m  [1m[34mSELECT `relationships`.* FROM `relationships` WHERE `relationships`.`follower_id` = 2 AND `relationships`.`following_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `following?'
+  Rendered users/_unfollow.html.erb (Duration: 2.0ms | Allocations: 305)
+  Rendered users/_follow_form.html.erb (Duration: 26.0ms | Allocations: 1624)
+  Rendered users/show.html.erb within layouts/application (Duration: 80.7ms | Allocations: 8241)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 289ms (Views: 262.0ms | ActiveRecord: 15.1ms | Allocations: 15247)
+
+
+Started DELETE "/relationships/1" for ::1 at 2021-03-20 21:16:11 +0900
+Processing by RelationshipsController#destroy as JS
+  Parameters: {"commit"=>"フォロー解除", "id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:8:in `destroy'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:9:in `destroy'
+  [1m[36mRelationship Load (1.0ms)[0m  [1m[34mSELECT `relationships`.* FROM `relationships` WHERE `relationships`.`follower_id` = 2 AND `relationships`.`following_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[36mRelationship Destroy (1.8ms)[0m  [1m[31mDELETE FROM `relationships` WHERE `relationships`.`id` = 2[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  Rendering relationships/destroy.js.erb
+  Rendered users/_follow.html.erb (Duration: 2.0ms | Allocations: 340)
+  Rendered relationships/destroy.js.erb (Duration: 7.3ms | Allocations: 725)
+Completed 200 OK in 132ms (Views: 41.0ms | ActiveRecord: 7.9ms | Allocations: 7524)
+
+
+Started GET "/users/1" for ::1 at 2021-03-20 21:16:31 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (1.9ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (0.9ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:19
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`follower_id` WHERE `relationships`.`following_id` = 1[0m
+  ↳ app/views/users/show.html.erb:24
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`following_id` WHERE `relationships`.`follower_id` = 1[0m
+  ↳ app/views/users/show.html.erb:29
+  [1m[36mRelationship Load (0.6ms)[0m  [1m[34mSELECT `relationships`.* FROM `relationships` WHERE `relationships`.`follower_id` = 2 AND `relationships`.`following_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `following?'
+  Rendered users/_follow.html.erb (Duration: 1.2ms | Allocations: 178)
+  Rendered users/_follow_form.html.erb (Duration: 13.1ms | Allocations: 1269)
+  Rendered users/show.html.erb within layouts/application (Duration: 50.8ms | Allocations: 7302)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 119ms (Views: 103.8ms | ActiveRecord: 7.6ms | Allocations: 13186)
+
+
+Started POST "/relationships" for ::1 at 2021-03-20 21:16:36 +0900
+Processing by RelationshipsController#create as JS
+  Parameters: {"following_id"=>"1", "commit"=>"フォローする"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:3:in `create'
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:4:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mRelationship Create (1.4ms)[0m  [1m[32mINSERT INTO `relationships` (`follower_id`, `following_id`, `created_at`, `updated_at`) VALUES (2, 1, '2021-03-20 12:16:36.651765', '2021-03-20 12:16:36.651765')[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:24:in `follow'
+  Rendering relationships/create.js.erb
+  Rendered users/_unfollow.html.erb (Duration: 0.9ms | Allocations: 179)
+  Rendered relationships/create.js.erb (Duration: 6.1ms | Allocations: 530)
+Completed 200 OK in 76ms (Views: 11.9ms | ActiveRecord: 15.8ms | Allocations: 8339)
+
+
+Started GET "/users/1" for ::1 at 2021-03-20 21:18:46 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (1.0ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (1.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:19
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`follower_id` WHERE `relationships`.`following_id` = 1[0m
+  ↳ app/views/users/show.html.erb:24
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`following_id` WHERE `relationships`.`follower_id` = 1[0m
+  ↳ app/views/users/show.html.erb:29
+  [1m[36mRelationship Load (0.9ms)[0m  [1m[34mSELECT `relationships`.* FROM `relationships` WHERE `relationships`.`follower_id` = 2 AND `relationships`.`following_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `following?'
+  Rendered users/_unfollow.html.erb (Duration: 4.7ms | Allocations: 305)
+  Rendered users/_follow_form.html.erb (Duration: 16.3ms | Allocations: 1625)
+  Rendered users/show.html.erb within layouts/application (Duration: 62.5ms | Allocations: 8249)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 164ms (Views: 141.4ms | ActiveRecord: 13.0ms | Allocations: 15262)
+
+
+Started DELETE "/relationships/1" for ::1 at 2021-03-20 21:18:51 +0900
+Processing by RelationshipsController#destroy as JS
+  Parameters: {"commit"=>"フォロー解除", "id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:8:in `destroy'
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:9:in `destroy'
+  [1m[36mRelationship Load (0.9ms)[0m  [1m[34mSELECT `relationships`.* FROM `relationships` WHERE `relationships`.`follower_id` = 2 AND `relationships`.`following_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[35m (7.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[36mRelationship Destroy (3.6ms)[0m  [1m[31mDELETE FROM `relationships` WHERE `relationships`.`id` = 3[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[35m (7.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  Rendering relationships/destroy.js.erb
+  Rendered users/_follow.html.erb (Duration: 1.9ms | Allocations: 340)
+  Rendered relationships/destroy.js.erb (Duration: 30.0ms | Allocations: 737)
+Completed 200 OK in 133ms (Views: 80.5ms | ActiveRecord: 22.0ms | Allocations: 7550)
+
+
+Started POST "/relationships" for ::1 at 2021-03-20 21:18:59 +0900
+Processing by RelationshipsController#create as JS
+  Parameters: {"following_id"=>"1", "commit"=>"フォローする"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:3:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:4:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mRelationship Create (2.3ms)[0m  [1m[32mINSERT INTO `relationships` (`follower_id`, `following_id`, `created_at`, `updated_at`) VALUES (2, 1, '2021-03-20 12:18:59.838251', '2021-03-20 12:18:59.838251')[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:24:in `follow'
+  Rendering relationships/create.js.erb
+  Rendered users/_unfollow.html.erb (Duration: 0.8ms | Allocations: 179)
+  Rendered relationships/create.js.erb (Duration: 18.6ms | Allocations: 537)
+Completed 200 OK in 53ms (Views: 20.3ms | ActiveRecord: 6.6ms | Allocations: 8345)
+
+
+Started DELETE "/relationships/1" for ::1 at 2021-03-20 21:24:29 +0900
+  [1m[35m (23.8ms)[0m  [1m[35mSET NAMES utf8mb4,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+Processing by RelationshipsController#destroy as JS
+  Parameters: {"commit"=>"フォロー解除", "id"=>"1"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:8:in `destroy'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:9:in `destroy'
+  [1m[36mRelationship Load (1.4ms)[0m  [1m[34mSELECT `relationships`.* FROM `relationships` WHERE `relationships`.`follower_id` = 2 AND `relationships`.`following_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[35m (34.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[36mRelationship Destroy (3.5ms)[0m  [1m[31mDELETE FROM `relationships` WHERE `relationships`.`id` = 4[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  Rendering relationships/destroy.js.erb
+  Rendered users/_follow.html.erb (Duration: 9.9ms | Allocations: 184)
+  Rendered relationships/destroy.js.erb (Duration: 13.4ms | Allocations: 303)
+Completed 200 OK in 212ms (Views: 29.1ms | ActiveRecord: 48.5ms | Allocations: 5345)
+
+
+Started POST "/relationships" for ::1 at 2021-03-20 21:24:31 +0900
+Processing by RelationshipsController#create as JS
+  Parameters: {"following_id"=>"1", "commit"=>"フォローする"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:3:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:4:in `create'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mRelationship Create (1.4ms)[0m  [1m[32mINSERT INTO `relationships` (`follower_id`, `following_id`, `created_at`, `updated_at`) VALUES (2, 1, '2021-03-20 12:24:32.018464', '2021-03-20 12:24:32.018464')[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:24:in `follow'
+  Rendering relationships/create.js.erb
+  Rendered users/_unfollow.html.erb (Duration: 1.0ms | Allocations: 173)
+  Rendered relationships/create.js.erb (Duration: 1.8ms | Allocations: 289)
+Completed 200 OK in 50ms (Views: 3.6ms | ActiveRecord: 6.1ms | Allocations: 7914)
+
+
+Started DELETE "/relationships/1" for ::1 at 2021-03-20 21:24:33 +0900
+Processing by RelationshipsController#destroy as JS
+  Parameters: {"commit"=>"フォロー解除", "id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:8:in `destroy'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:9:in `destroy'
+  [1m[36mRelationship Load (0.7ms)[0m  [1m[34mSELECT `relationships`.* FROM `relationships` WHERE `relationships`.`follower_id` = 2 AND `relationships`.`following_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[36mRelationship Destroy (0.8ms)[0m  [1m[31mDELETE FROM `relationships` WHERE `relationships`.`id` = 5[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  Rendering relationships/destroy.js.erb
+  Rendered users/_follow.html.erb (Duration: 0.7ms | Allocations: 183)
+  Rendered relationships/destroy.js.erb (Duration: 1.4ms | Allocations: 302)
+Completed 200 OK in 28ms (Views: 3.2ms | ActiveRecord: 5.2ms | Allocations: 5354)
+
+
+Started POST "/relationships" for ::1 at 2021-03-20 21:24:35 +0900
+Processing by RelationshipsController#create as JS
+  Parameters: {"following_id"=>"1", "commit"=>"フォローする"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:3:in `create'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:4:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mRelationship Create (0.9ms)[0m  [1m[32mINSERT INTO `relationships` (`follower_id`, `following_id`, `created_at`, `updated_at`) VALUES (2, 1, '2021-03-20 12:24:35.667773', '2021-03-20 12:24:35.667773')[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:24:in `follow'
+  Rendering relationships/create.js.erb
+  Rendered users/_unfollow.html.erb (Duration: 0.7ms | Allocations: 173)
+  Rendered relationships/create.js.erb (Duration: 1.8ms | Allocations: 289)
+Completed 200 OK in 39ms (Views: 4.7ms | ActiveRecord: 6.0ms | Allocations: 7930)
+
+
+Started GET "/users/1" for ::1 at 2021-03-20 21:24:38 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (2.8ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (7.5ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:19
+  [1m[35m (12.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`follower_id` WHERE `relationships`.`following_id` = 1[0m
+  ↳ app/views/users/show.html.erb:24
+  [1m[35m (28.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`following_id` WHERE `relationships`.`follower_id` = 1[0m
+  ↳ app/views/users/show.html.erb:29
+  [1m[36mRelationship Load (27.3ms)[0m  [1m[34mSELECT `relationships`.* FROM `relationships` WHERE `relationships`.`follower_id` = 2 AND `relationships`.`following_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `following?'
+  Rendered users/_unfollow.html.erb (Duration: 4.0ms | Allocations: 168)
+  Rendered users/_follow_form.html.erb (Duration: 352.4ms | Allocations: 1178)
+  Rendered users/show.html.erb within layouts/application (Duration: 1179.4ms | Allocations: 7415)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2129ms (Views: 2038.5ms | ActiveRecord: 82.1ms | Allocations: 13306)
+
+
+Started DELETE "/relationships/1" for ::1 at 2021-03-20 21:24:44 +0900
+Processing by RelationshipsController#destroy as JS
+  Parameters: {"commit"=>"フォロー解除", "id"=>"1"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:8:in `destroy'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:9:in `destroy'
+  [1m[36mRelationship Load (1.0ms)[0m  [1m[34mSELECT `relationships`.* FROM `relationships` WHERE `relationships`.`follower_id` = 2 AND `relationships`.`following_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[36mRelationship Destroy (1.1ms)[0m  [1m[31mDELETE FROM `relationships` WHERE `relationships`.`id` = 6[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  Rendering relationships/destroy.js.erb
+  Rendered users/_follow.html.erb (Duration: 1.0ms | Allocations: 183)
+  Rendered relationships/destroy.js.erb (Duration: 3.1ms | Allocations: 302)
+Completed 200 OK in 36ms (Views: 5.6ms | ActiveRecord: 6.3ms | Allocations: 5356)
+
+
+Started POST "/relationships" for ::1 at 2021-03-20 21:24:45 +0900
+Processing by RelationshipsController#create as JS
+  Parameters: {"following_id"=>"1", "commit"=>"フォローする"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:3:in `create'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:4:in `create'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mRelationship Create (2.8ms)[0m  [1m[32mINSERT INTO `relationships` (`follower_id`, `following_id`, `created_at`, `updated_at`) VALUES (2, 1, '2021-03-20 12:24:45.569375', '2021-03-20 12:24:45.569375')[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:24:in `follow'
+  Rendering relationships/create.js.erb
+  Rendered users/_unfollow.html.erb (Duration: 4.8ms | Allocations: 173)
+  Rendered relationships/create.js.erb (Duration: 5.5ms | Allocations: 289)
+Completed 200 OK in 70ms (Views: 13.7ms | ActiveRecord: 9.9ms | Allocations: 7880)
+
+
+Started DELETE "/relationships/1" for ::1 at 2021-03-20 21:25:04 +0900
+Processing by RelationshipsController#destroy as JS
+  Parameters: {"commit"=>"フォロー解除", "id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:8:in `destroy'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:9:in `destroy'
+  [1m[36mRelationship Load (0.9ms)[0m  [1m[34mSELECT `relationships`.* FROM `relationships` WHERE `relationships`.`follower_id` = 2 AND `relationships`.`following_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[36mRelationship Destroy (1.3ms)[0m  [1m[31mDELETE FROM `relationships` WHERE `relationships`.`id` = 7[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  Rendering relationships/destroy.js.erb
+  Rendered users/_follow.html.erb (Duration: 0.6ms | Allocations: 183)
+  Rendered relationships/destroy.js.erb (Duration: 1.5ms | Allocations: 302)
+Completed 200 OK in 36ms (Views: 4.8ms | ActiveRecord: 6.2ms | Allocations: 5350)
+
+
+Started POST "/relationships" for ::1 at 2021-03-20 21:25:05 +0900
+Processing by RelationshipsController#create as JS
+  Parameters: {"following_id"=>"1", "commit"=>"フォローする"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:3:in `create'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:4:in `create'
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mRelationship Create (0.8ms)[0m  [1m[32mINSERT INTO `relationships` (`follower_id`, `following_id`, `created_at`, `updated_at`) VALUES (2, 1, '2021-03-20 12:25:06.068825', '2021-03-20 12:25:06.068825')[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:24:in `follow'
+  Rendering relationships/create.js.erb
+  Rendered users/_unfollow.html.erb (Duration: 0.8ms | Allocations: 173)
+  Rendered relationships/create.js.erb (Duration: 1.8ms | Allocations: 289)
+Completed 200 OK in 58ms (Views: 4.0ms | ActiveRecord: 6.6ms | Allocations: 7896)
+
+
+Started GET "/users/1" for ::1 at 2021-03-20 21:27:49 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (45.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (7.7ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (30.9ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 1[0m
+  ↳ app/views/users/show.html.erb:18
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:19
+  [1m[36mRelationship Load (1.6ms)[0m  [1m[34mSELECT `relationships`.* FROM `relationships` WHERE `relationships`.`follower_id` = 2 AND `relationships`.`following_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:19:in `following?'
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`follower_id` WHERE `relationships`.`following_id` = 1[0m
+  ↳ app/views/users/_unfollow.html.erb:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`following_id` WHERE `relationships`.`follower_id` = 1[0m
+  ↳ app/views/users/_unfollow.html.erb:9
+  Rendered users/_unfollow.html.erb (Duration: 70.5ms | Allocations: 2660)
+  Rendered users/_follow_form.html.erb (Duration: 431.2ms | Allocations: 3983)
+  Rendered users/show.html.erb within layouts/application (Duration: 1278.1ms | Allocations: 8316)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1600ms (Views: 1467.2ms | ActiveRecord: 95.9ms | Allocations: 15342)
+
+
+Started DELETE "/relationships/1" for ::1 at 2021-03-20 21:27:53 +0900
+Processing by RelationshipsController#destroy as JS
+  Parameters: {"commit"=>"フォロー解除", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:8:in `destroy'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:9:in `destroy'
+  [1m[36mRelationship Load (0.7ms)[0m  [1m[34mSELECT `relationships`.* FROM `relationships` WHERE `relationships`.`follower_id` = 2 AND `relationships`.`following_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[36mRelationship Destroy (1.1ms)[0m  [1m[31mDELETE FROM `relationships` WHERE `relationships`.`id` = 8[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:29:in `unfollow'
+  Rendering relationships/destroy.js.erb
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`follower_id` WHERE `relationships`.`following_id` = 1[0m
+  ↳ app/views/users/_follow.html.erb:4
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`following_id` WHERE `relationships`.`follower_id` = 1[0m
+  ↳ app/views/users/_follow.html.erb:9
+  Rendered users/_follow.html.erb (Duration: 55.4ms | Allocations: 2646)
+  Rendered relationships/destroy.js.erb (Duration: 119.5ms | Allocations: 3068)
+Completed 200 OK in 181ms (Views: 149.7ms | ActiveRecord: 7.1ms | Allocations: 9873)
+
+
+Started POST "/relationships" for ::1 at 2021-03-20 21:27:54 +0900
+Processing by RelationshipsController#create as JS
+  Parameters: {"following_id"=>"1", "commit"=>"フォローする"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:3:in `create'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/controllers/relationships_controller.rb:4:in `create'
+  [1m[35m (5.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[36mRelationship Create (1.3ms)[0m  [1m[32mINSERT INTO `relationships` (`follower_id`, `following_id`, `created_at`, `updated_at`) VALUES (2, 1, '2021-03-20 12:27:55.040006', '2021-03-20 12:27:55.040006')[0m
+  ↳ app/models/user.rb:24:in `follow'
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:24:in `follow'
+  Rendering relationships/create.js.erb
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`follower_id` WHERE `relationships`.`following_id` = 1[0m
+  ↳ app/views/users/_unfollow.html.erb:4
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `users` INNER JOIN `relationships` ON `users`.`id` = `relationships`.`following_id` WHERE `relationships`.`follower_id` = 1[0m
+  ↳ app/views/users/_unfollow.html.erb:9
+  Rendered users/_unfollow.html.erb (Duration: 13.9ms | Allocations: 2368)
+  Rendered relationships/create.js.erb (Duration: 21.2ms | Allocations: 2752)
+Completed 200 OK in 67ms (Views: 21.9ms | ActiveRecord: 14.4ms | Allocations: 10556)
+
+
+Started GET "/games" for ::1 at 2021-03-20 21:32:02 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (23.8ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:14
+  [1m[36mLike Exists? (3.2ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (25.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 2[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 3[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:40
+  Rendered games/index.html.erb within layouts/application (Duration: 454.0ms | Allocations: 14941)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 777ms (Views: 661.1ms | ActiveRecord: 62.4ms | Allocations: 21050)
+
+
+Started GET "/games" for ::1 at 2021-03-20 21:32:10 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (1.2ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:14
+  [1m[36mLike Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 2[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 3[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:40
+  Rendered games/index.html.erb within layouts/application (Duration: 88.7ms | Allocations: 12189)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 171ms (Views: 156.7ms | ActiveRecord: 10.7ms | Allocations: 17544)
+
+
+Started GET "/users/2" for ::1 at 2021-03-20 21:32:12 +0900
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/controllers/users_controller.rb:3:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/users/show.html.erb:5
+  [1m[36mGame Load (0.8ms)[0m  [1m[34mSELECT `games`.* FROM `games` WHERE `games`.`user_id` = 2[0m
+  ↳ app/views/users/show.html.erb:10
+  [1m[36mGame Load (2.9ms)[0m  [1m[34mSELECT `games`.* FROM `games` INNER JOIN `likes` ON `games`.`id` = `likes`.`game_id` WHERE `likes`.`user_id` = 2[0m
+  ↳ app/views/users/show.html.erb:18
+  Rendered users/_follow_form.html.erb (Duration: 1.0ms | Allocations: 11)
+  Rendered users/show.html.erb within layouts/application (Duration: 36.6ms | Allocations: 2969)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 191ms (Views: 174.9ms | ActiveRecord: 7.6ms | Allocations: 8875)
+
+
+Started GET "/games" for ::1 at 2021-03-20 21:32:14 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (1.1ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:14
+  [1m[36mLike Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 2[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 3[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:40
+  Rendered games/index.html.erb within layouts/application (Duration: 72.3ms | Allocations: 12172)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 144ms (Views: 131.7ms | ActiveRecord: 9.7ms | Allocations: 17530)
+
+
+Started GET "/games?page=2" for ::1 at 2021-03-20 21:32:18 +0900
+Processing by GamesController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (0.8ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 3[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:14
+  [1m[36mLike Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 4 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 4[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 5 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 5[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 6 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 6[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:40
+  Rendered games/index.html.erb within layouts/application (Duration: 213.4ms | Allocations: 13276)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 284ms (Views: 269.3ms | ActiveRecord: 11.8ms | Allocations: 18640)
+
+
+Started GET "/games" for ::1 at 2021-03-20 21:33:13 +0900
+Processing by GamesController#index as HTML
+  Rendering games/index.html.erb within layouts/application
+  [1m[36mGame Load (1.3ms)[0m  [1m[34mSELECT `games`.* FROM `games` LIMIT 3 OFFSET 0[0m
+  ↳ app/views/games/index.html.erb:9
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  ↳ app/views/games/index.html.erb:14
+  [1m[36mLike Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 1[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (11.1ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 2 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 2[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/games/index.html.erb:11
+  [1m[36mLike Exists? (3.3ms)[0m  [1m[34mSELECT 1 AS one FROM `likes` WHERE `likes`.`user_id` = 2 AND `likes`.`game_id` = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:33:in `already_liked?'
+  [1m[35m (114.1ms)[0m  [1m[34mSELECT COUNT(*) FROM `likes` WHERE `likes`.`game_id` = 3[0m
+  ↳ app/views/games/index.html.erb:21
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `games`[0m
+  ↳ app/views/games/index.html.erb:40
+  Rendered games/index.html.erb within layouts/application (Duration: 467.4ms | Allocations: 12188)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 599ms (Views: 456.2ms | ActiveRecord: 138.4ms | Allocations: 17545)
+>>>>>>> origin/master
 
 

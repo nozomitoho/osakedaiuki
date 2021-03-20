@@ -1,4 +1,9 @@
 class GamesController < ApplicationController
+    def top
+    end
+    def app
+    end
+    
     def index
         if params[:search] == nil
             @game= Game.all.page(params[:page]).per(3)
@@ -49,6 +54,6 @@ class GamesController < ApplicationController
 
     private
     def game_params
-        params.require(:game).permit(:body)
+        params.require(:game).permit(:body, :title)
     end
 end
