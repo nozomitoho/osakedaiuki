@@ -8,15 +8,15 @@
   <% if user_signed_in? %>
       <% if current_user.already_liked?(@game) %>
           <%= link_to game_like_path(@game), method: :delete do %>
-             <p>いいねを取り消す</p><%= @game.likes.count %>
+            <i class="fas fa-heart"></i><%= @game.likes.count %>
           <% end %>
       <% else %>
           <%= link_to game_likes_path(@game), method: :post do %>
-             <p>いいね</p><%= @game.likes.count %>
+            <i class="far fa-heart"></i><%= @game.likes.count %>
           <% end %>
       <% end %>
   <% else %>
-      <p>いいねの数 = </p><%= @game.likes.count %>
+  <i class="far fa-heart"></i><%= @game.likes.count %>
   <% end %>
 </div>
 
