@@ -7,9 +7,20 @@ class User < ApplicationRecord
         has_many :games, dependent: :destroy
         has_many :likes, dependent: :destroy
         has_many :liked_games, through: :likes, source: :game
-        validates :name, presence: true
+
+        #nameは空だとダメ。かつ登録してある名前は新しく使えない。
+        validates :name, presence: true, uniqueness: true, length: {maximum: 50}
         
         def already_liked?(game)
           self.likes.exists?(game_id: game.id)
+        end
+
+        #登録時にメールアドレスを不要とする：shotaro
+        def email_required?
+          false
+        end
+      
+        def email_changed?
+          false
         end
 end
