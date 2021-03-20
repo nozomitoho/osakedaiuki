@@ -1,0 +1,9 @@
+<h1>osakedaisuki</h1>
+<h3>新規Tweet</h3>
+<%= form_for @game do |f| %>
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_field :body, :size => 140 %>
+  </div>
+  <%= f.submit "投稿する" %>
+<% end %>

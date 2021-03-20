@@ -1,0 +1,11 @@
+<h1>osakedaisuki</h1>
+<h3>Tweet一覧</h3>
+<div class="tweets-container">
+  <% @game.each do |g| %>
+    <div class="tweet">
+      <%= g.body %>
+      <%= g.created_at %>
+      <%= link_to "詳細へ", game_path(g.id) %>
+    </div>
+  <% end %>
+</div>
