@@ -1,8 +1,11 @@
 <h1>osakedaisuki</h1>
-<h3>Tweet詳細</h3>
+<h3>Game詳細</h3>
 <div class="tweet">
   <p><%= @game.body %></p>
   <p><%= @game.created_at %></p>
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @game.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
   <%= link_to "編集する", edit_game_path(@game.id) %>
 
   <% if user_signed_in? %>

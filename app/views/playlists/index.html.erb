@@ -1,0 +1,22 @@
+<h1>osakedaisuki</h1>
+<h3>Playlist一覧</h3>
+
+<div class="tweets-container">
+  
+  <% @playlists.each do |p| %>
+    <p><%= link_to p.content, playlist_path(p.id) %></p>
+    <hr>
+  <% end %>
+
+    <%= link_to "プレイリスト作成へ", new_playlist_path %>
+    <%= link_to "game一覧へ", games_path %>
+    
+    <% if user_signed_in? %>
+        <%= link_to "マイページへ", user_path(current_user.id) %>
+    <% end %>
+
+    <%= link_to "ログイン", new_user_session_path %>
+    <%= link_to "新規登録", new_user_registration_path %>
+    <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+
+</div>

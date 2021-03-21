@@ -1,4 +1,7 @@
 class GamesController < ApplicationController
+
+    before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
     def top
     end
     def app
@@ -6,13 +9,17 @@ class GamesController < ApplicationController
     
     def index
         if params[:search] == nil
-            @game= Game.all.page(params[:page]).per(3)
+            @game= Game.all.order(id: "DESC").page(params[:page]).per(3)
         elsif params[:search] == ''
-            @game= Game.all.page(params[:page]).per(3)
+            @game= Game.all.order(id: "DESC").page(params[:page]).per(3)
         else
             #部分検索
             @game = Game.where("body LIKE ? ",'%' + params[:search] + '%').page(params[:page]).per(3)
         end
+
+        #ランキング表示(3位まで)
+        @rank_games = Game.all.sort {|a,b| b.playlists.count <=> a.playlists.count}.first(3)
+
     end
     def show
         @game = Game.find(params[:id])
@@ -22,11 +29,22 @@ class GamesController < ApplicationController
     end
 
     def create
-        game = Game.new(game_params)
-        game.user_id = current_user.id
-        if game.save
+        @game = Game.new(game_params)
+        @game.user_id = current_user.id
+
+        #youtube表示
+        url = params[:game][:youtube_url]
+        url = url.last(11)
+        @game.youtube_url = url
+        #ここまで
+
+        if @game.save
+            #投稿後メッセ
+            flash[:notice] = '飲み歌が追加されました。'
             redirect_to :action => "index"
         else
+            #投稿失敗メッセ
+            flash.now[:alert] = '投稿失敗。タメ１です。'
             redirect_to :action => "new"
         end
     end
