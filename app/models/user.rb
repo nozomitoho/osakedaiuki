@@ -32,8 +32,8 @@ class User < ApplicationRecord
 
   #＜＜＜いいね＞＞＞
       has_many :games, dependent: :destroy
-      has_many :likes, dependent: :destroy
-      has_many :liked_games, through: :likes, source: :game
+      has_many :likes, dependent: :destroy, dependent: :destroy
+      has_many :liked_games, through: :likes, source: :game, dependent: :destroy
 
       def already_liked?(game)
         self.likes.exists?(game_id: game.id)

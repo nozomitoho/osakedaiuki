@@ -1,3 +1,221 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+//top
+header{
+    display: fixed;
+    height: 100vh;
+    flex-direction: column;
+    z-index: 2;
+    position:fixed;
+    top: 70%; 
+    left:10%;
+    font-size: 25px;
+    .pathlink{
+      margin: 5px;
+    }
+    animation-name: fade;
+    animation-duration: 4s;
+  }
+  .top{
+    z-index: 1;
+    position:relative;
+  }
+  .top1{
+    background-image: url(beer.jpg);
+    background-size: cover;
+      height: 100vh;
+      width: 100%;
+    animation: fadeIn 0.2s ease 0.3s 1 normal;
+  }
+  .img-wrap {
+    overflow: hidden;
+    position: relative;
+  }
+  .img-wrap:before,
+  .img-wrap:after {
+    animation: 2s cubic-bezier(.4, 0, .2, 1) forwards;
+    background: black;
+    bottom: 0;
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+  }
+  .img-wrap:before {
+    animation-name: img-wrap-before;
+    left: 0;
+    right: 50%;
+  }
+  .img-wrap:after {
+    animation-name: img-wrap-after;
+    left: 50%;
+    right: 0;
+  }
+  @keyframes img-wrap-before {
+    100% {
+      transform: translateY(100%);
+    }
+  }
+  @keyframes img-wrap-after {
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+  .top1-1{
+    font-size: 200%;
+    text-align: center;
+    padding-top: 25%;
+    animation-name: fade;
+    animation-duration: 4s;
+  }
+  .top2 {
+    background-image: url(sangria.jpg);
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+  }
+  .img-animation {
+    animation: img-opacity 2s cubic-bezier(.4, 0, .2, 1);
+    overflow: hidden;
+    position: relative;
+  }
+  .img-animation:before {
+    animation: img-animation 2s cubic-bezier(.4, 0, .2, 1) forwards;
+    background: black;
+    bottom: 0;
+    content: '';
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+  @keyframes img-opacity {
+    0% {
+      opacity: 0;
+    }
+  }
+  @keyframes img-animation {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  .top3 {
+    background-image: url(sake.jpg);
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+  }
+  .black{
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100%;
+  }
+  .con1{
+    font-weight: bold;
+    font-size: 30px;
+    padding-top: 25%;
+    text-align: center;
+    animation-name: fade;
+    animation-duration: 0.5s;
+  }
+  .con2{
+    padding: 5%;
+    text-align: center;
+  }
+  .con4{
+    display: flex;
+    width: 40vw;
+    margin-left: 40vw;
+    text-align: center;
+  }
+  .foot{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    background-color: rgba(177, 177, 177, 0.267);
+    height: 3%;
+    width: 100%;
+  }
+  .foot1{
+    vertical-align: middle;
+  }
+  .foot2{
+    display: flex;
+    width: 40%;
+    align-items: center;
+    margin: 1.2% 0 0 45%;
+  }
+  .foot4{
+    width: 100%;
+    align-items: center;
+  }
+  .guide{
+    color: rgba(255, 255, 255, 0.856);
+    text-decoration: none !important;
+    height: 20px;
+    width: 20px;
+  }
+  .fa-facebook-square{
+    color: rgba(79, 149, 255, 0.5);
+  }
+  .fa-instagram{
+    color: rgba(185, 79, 255, 0.5);
+  }
+  .fa-twitter{
+    color: rgba(79, 249, 255, 0.5);
+  }
+  .fa-youtube{
+    color: rgba(78, 37, 37, 0.5);
+  }
+  .foot a{
+    text-decoration: none !important;
+  }
+  .geek{
+    padding-right: 3px;
+    padding-top: 5px;
+    height:35px;
+  }
+  .guide1{
+    font-size: 70%;
+    color: rgba(255, 255, 255, 0.856);
+    margin: -1px 0px 2px;
+    width: 70%;
+    text-decoration-line:underline;
+  }
+  //game
+  .doga1{
+    font-weight: bold;
+    font-size: 30px;
+    padding: 5%;
+    text-align: center;
+    animation-name: fade;
+    animation-duration: 0.5s;
+  }
+  .doga2{
+    padding-left: 5vw;
+    width: 50%;
+  }
+  .doga3{
+    padding: 0 10%;
+  }
+  .game{
+    h2{
+      margin: 30px;
+    }
+  }
+  .game2{
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.856);
+    margin-left: 10%;
+    width: 100%;
+    
+    text-decoration-line:underline;
+  }
+  .game3{
+    margin:0 0 5% 40vw;
+    width: 50vw;
+  }

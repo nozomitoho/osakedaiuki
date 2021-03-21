@@ -1,9 +1,9 @@
-<h1>プレイリスト編集</h1>
+<h1 class="center sp mtop">プレイリスト編集</h1>
 <%= form_for @playlist do |f| %>
 
-    <p>プレイリスト名：<%= f.text_field :content %></p>
+    <p class="center sp">プレイリスト名：<%= f.text_field :content %></p>
 
-    <div class="field">
+    <div class="field center sp">
     
         <%= collection_check_boxes(:playlist, :game_ids, Game.all, :id, :title) do |b| %>
             <p><%= b.label { b.check_box + b.text } %></p>
@@ -11,22 +11,26 @@
                 
         <% end %>
     </div>
-    <%= f.submit %>
+    <p class="center mbottom sp"><%= f.submit %></p>
 <hr>
 
     
 
 
-<h2>My Playlistの曲順変更はこちらより。</h2>
+<h3 class="center mtop mbottom sp">My Playlistの曲順変更はこちらより。</h3>
+
     <% @playlist.playlistgames.each do |playlistgame| %>
         <%= fields_for "playlistgames[]", playlistgame do |fi| %>
-          <%= playlistgame.game.title %>
-          <%= fi.select :rank, [[1,1], [2,2], [3,3], [4,4], [5,5], [6,6], [7,7], [8,8], [9,9], [10,10], [11,11], [12,12], [13,13], [14,14], [15,15], [16,16], [17,17], [18,18], [19,19], [20,20]], include_blank: "選択して下さい" %>
-          <p><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= playlistgame.game.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+          <p class="center mtop sp"><%= playlistgame.game.title %></p>
+          <p class="center mbottom sp"><%= fi.select :rank, [[1,1], [2,2], [3,3], [4,4], [5,5], [6,6], [7,7], [8,8], [9,9], [10,10], [11,11], [12,12], [13,13], [14,14], [15,15], [16,16], [17,17], [18,18], [19,19], [20,20]], include_blank: "選択して下さい" %></p>
+          <p class="center mbottom sp"><iframe width="320" height="180" src="https://www.youtube.com/embed/<%= playlistgame.game.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
         <% end %>
+        <hr>
     <% end %>
 
 
-    <%= f.submit %>
+    <p class="center mtop sp"><%= f.submit %></p>
   
 <% end %>
+
+<h4 class="center mtop sp"><%= link_to "プレイリストに戻る", playlist_path(@playlist.id) %></h4>
