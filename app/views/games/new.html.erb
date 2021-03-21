@@ -1,25 +1,25 @@
-<h1>osakedaisuki</h1>
-<h3>新規Tweet</h3>
-
-<%= form_for @game do |f| %>
-  <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-    <%= f.label :youtube_url %>
-    <%= f.text_field :youtube_url, :size => 140 %>
-    <%= f.label :body %>
-    <%= f.text_field :body, :size => 140 %>
-    <div class="check_box">
-    <span>タグ</span>
-    <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
-    <div>
-      <%= tag.label do %>
-        <%= tag.check_box %>
-        <%= tag.text %>
-      <% end %>
-    </div>
-  <% end %>
-　　</div>
+<div class = "games_new_body">
+  <h3 class = games_new_title_h3>New Post</h3>
+  <div class = "games_new_form_body">
+    <%= form_for @game do |f| %>
+      <div class = games_new_short_field>
+        <div>
+          <%= f.text_field :title, :placeholder => "Game Title"  %>
+        </div
+      </div>
+      <div class = games_new_short_field>
+        <div>
+          <%= f.text_field :youtube_url, :placeholder => "Youtube URL" %>
+        </div>
+      </div>
+      <div class = games_new_long_field>
+        <div class = games_new_text_field_back>
+          <%= f.text_area :body, :placeholder => "Game Detail" %>
+        </div>
+      </div>
+      <div>
+        <%= f.submit "投稿する" %>
+      </div>
+    <% end %>
   </div>
-  <%= f.submit "投稿する" %>
-<% end %>
+</div>

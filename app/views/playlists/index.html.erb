@@ -1,10 +1,17 @@
-<h1>osakedaisuki</h1>
-<h3>Playlist一覧</h3>
+<h1 class = "center mtop mbottom" >Playlist一覧</h1>
+<h3 class = "center mtop mbottom" >(最大3曲まで表示)</h3>
+
 
 <div class="tweets-container">
   
   <% @playlists.each do |p| %>
-    <p><%= link_to p.content, playlist_path(p.id) %></p>
+    <p class = "center mtop mbottom"><%= link_to p.content, playlist_path(p.id) %></p>
+
+    
+    <% p.games.first(3).each do |g| %>
+      <p class="center mbottom sp"><iframe width="320" height="180" src="https://www.youtube.com/embed/<%= g.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+    <% end %>
+
     <hr>
   <% end %>
 

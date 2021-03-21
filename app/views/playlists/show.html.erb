@@ -1,16 +1,17 @@
-<h1>osakedaisuki</h1>
-<h2>Playlist詳細</h2>
+
+<h1 class = "center mtop mbottom" >Playlist詳細</h1>
 <div class="playlist">
-  <h3><%= @playlist.content %></h3>
-  <p>作成日時：<%= @playlist.created_at %></p>
+  <h2 class = "center mtop mbottom"><%= @playlist.content %></h2>
 
-  <p><%= link_to "プレイリストを編集する", edit_playlist_path(@playlist.id) %></p>
 
+  <% if current_user.id == @playlist.user_id %>
+    <p class = "center mtop mbottom" ><%= link_to "プレイリストを編集する", edit_playlist_path(@playlist.id) %></p>
+  <% end %>
 
 
 <hr>
 
-<div class="tabs">
+<div class="tabs sptabs">
     <input id="all" type="radio" name="tab_item" checked>
     <label class="tab_item" for="all">My Playlist</label>
     <input id="programming" type="radio" name="tab_item">
@@ -18,14 +19,14 @@
     <input id="design" type="radio" name="tab_item">
     <label class="tab_item" for="design">追加順</label>
 
-    <div class="tab_content" id="all_content">
+    <div class="tab_content center" id="all_content">
         <div class="tab_content_description">
             <% @games.each do |g| %>
-                <h4>飲み曲タイトル：<%= g.title %></h4>
-                <p>説明：<%= g.body %></p>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= g.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h4 class = "center mtop mbottom" >飲み曲タイトル：<%= g.title %></h4>
+                <p class = "center mtop mbottom" >説明：<%= g.body %></p>
+                <iframe width="320" height="180" src="https://www.youtube.com/embed/<%= g.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <%= link_to playlist_playlistgame_path(@playlist, g), method: :delete do %>
-                    <p>プレイリストから削除</p>
+                    <p class = "center mtop mbottom" >プレイリストから削除</p>
                 <% end %>
                 
                 <hr>
@@ -33,14 +34,14 @@
         </div>
     </div>
 
-    <div class="tab_content" id="programming_content">
+    <div class="tab_content center" id="programming_content">
         <div class="tab_content_description">
             <% @randam_games.each do |g| %>
-                <h4>飲み曲タイトル：<%= g.title %></h4>
-                <p>説明：<%= g.body %></p>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= g.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h4 class = "center mtop mbottom" >飲み曲タイトル：<%= g.title %></h4>
+                <p class = "center mtop mbottom" >説明：<%= g.body %></p>
+                <iframe width="320" height="180" src="https://www.youtube.com/embed/<%= g.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <%= link_to playlist_playlistgame_path(@playlist, g), method: :delete do %>
-                    <p>プレイリストから削除</p>
+                    <p class = "center mtop mbottom" >プレイリストから削除</p>
                 <% end %>
                 
                 <hr>
@@ -48,14 +49,14 @@
         </div>
     </div>
 
-    <div class="tab_content" id="design_content">
+    <div class="tab_content center" id="design_content">
         <div class="tab_content_description">
             <% @randam_games2.each do |g| %>
-                <h4>飲み曲タイトル：<%= g.title %></h4>
-                <p>説明：<%= g.body %></p>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= g.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <h4 class = "center mtop mbottom" >飲み曲タイトル：<%= g.title %></h4>
+                <p class = "center mtop mbottom" >説明：<%= g.body %></p>
+                <iframe width="320" height="180" src="https://www.youtube.com/embed/<%= g.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <%= link_to playlist_playlistgame_path(@playlist, g), method: :delete do %>
-                    <p>プレイリストから削除</p>
+                    <p class = "center mtop mbottom" >プレイリストから削除</p>
                 <% end %>
                 
                 <hr>
@@ -68,7 +69,9 @@
 <hr>
 
   
-  <%= link_to "プレイリストを編集する", edit_playlist_path(@playlist.id) %>
+  <% if current_user.id == @playlist.user_id %>   
+    <p class = "center mtop mbottom" ><%= link_to "プレイリストを編集する", edit_playlist_path(@playlist.id) %></p>
+  <% end %>
 </div>
 
-<%= link_to "ホームに戻る", root_path %>
+<p class = "center mtop mbottom" ><%= link_to "ホームに戻る", root_path %></p>
