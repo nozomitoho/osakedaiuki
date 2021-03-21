@@ -1,38 +1,37 @@
-<h1>osakedaisuki</h1>
-<h3>曲(Game)一覧</h3>
+<h1 class="center sp mtop">曲(Game)一覧</h1>
 
-<h3>投稿を検索</h3>
+<h3 class="center mtop sp">投稿を検索</h3>
 <%= form_tag({controller:"games",action:"index"}, method: :get) do %>
-    <%= text_field_tag :search %>
-    <%= submit_tag '検索する'  %>
+    <p class="center mtop mbottom sp"><%= text_field_tag :search %></p>
+    <p class="center mtop mbottom sp"><%= submit_tag '検索する'  %></p>
 <% end %>
 <%= form_tag games_path, method: :get, class: 'boards__searchForm' do %>
-    <%= select_tag :tag_id,
+    <p class="center mtop mbottom sp"><%= select_tag :tag_id,
                 options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
                 {
                     prompt: 'タグで絞り込み検索',
                     onchange: 'submit(this.form);'
                 }
-    %>
+    %></p>
 <% end %>
 
-<%= link_to "game新規投稿", new_game_path %>
-<%= link_to "新規プレイリスト作成", new_playlist_path %>
-<%= link_to "プレイリスト一覧", playlists_path %>
+<hr>
+<p class="center mtop sp"><%= link_to "game新規投稿", new_game_path, class: "whitewhite" %></p>
+<p class="center mtop sp"><%= link_to "新規プレイリスト作成", new_playlist_path, class: "whitewhite" %></p>
+<p class="center mtop mbottom sp"><%= link_to "プレイリスト一覧", playlists_path, class: "whitewhite" %></p>
 
 <hr>
 
-<h3>人気の曲Top3</h3>
+<h2 class="center mtop mbottom sp"><人気の曲Top3></h2>
 <% @rank_games.each do |g| %>
     <div class="tweet">
-        <p><%= link_to g.user.email , game_path(g.id)  %></p>
-        <p><%= g.title %></p>
-        <p><%= g.body %></p>
+        <p class="center mtop mbottom sp"><%= link_to g.user.email , game_path(g.id)  %></p>
+        <p class="center mtop mbottom sp">曲名：<%= g.title %></p>
+        <p class="center mtop mbottom sp">説明：<%= g.body %></p>
 
-        #Youtube表示
-        <div><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= g.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        <p class="center mbottom sp"><iframe width="320" height="180" src="https://www.youtube.com/embed/<%= g.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 
-        #ユーザーがログインしていたらいいねできる。
+
             <% if user_signed_in? %>
                 <% if current_user.already_liked?(g) %>
                     <%= link_to game_like_path(id: g.id, game_id: g.id), method: :delete do %>
@@ -46,9 +45,9 @@
             <% else %>
                 <i class="far fa-heart"></i><%= g.likes.count %>
             <% end %>
-        #いいねここまで
 
-        <%= g.created_at %>
+
+
         <% g.tags.each do |tag| %>
             <%= tag.name %>
         <% end %>  
@@ -61,19 +60,19 @@
 <% end %>
 
 <hr>
-<h3>新規Game</h3>
+<h2 class="center mtop mbottom sp"><新規Game></h2>
 
 <div class="tweets-container">
     <% @game.each do |g| %>
         <div class="tweet">
-            <p><%= link_to g.user.email , game_path(g.id)  %></p>
-            <p><%= g.title %></p>
-            <p><%= g.body %></p>
+            <p class="center mtop mbottom sp"><%= link_to g.user.email , game_path(g.id)  %></p>
+            <p class="center mtop mbottom sp whitewhite">曲名：<%= g.title %></p>
+            <p class="center mtop mbottom sp">説明：<%= g.body %></p>
 
-            #Youtube表示
-            <div><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= g.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
-            #ユーザーがログインしていたらいいねできる。
+            <p class="center mbottom sp"><iframe width="320" height="180" src="https://www.youtube.com/embed/<%= g.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+
+
                 <% if user_signed_in? %>
                     <% if current_user.already_liked?(g) %>
                         <%= link_to game_like_path(id: g.id, game_id: g.id), method: :delete do %>
@@ -87,9 +86,9 @@
                 <% else %>
                     <i class="far fa-heart"></i><%= g.likes.count %>
                 <% end %>
-            #いいねここまで
 
-            <%= g.created_at %>
+
+
             <% g.tags.each do |tag| %>
                 <%= tag.name %>
             <% end %>
@@ -104,13 +103,13 @@
 
     <hr>
 
-    #headerになりそう
+
     <% if user_signed_in? %>
         <%= link_to "マイページへ", user_path(current_user.id) %>　
+        <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+    <% else %>
+        <%= link_to "ログイン", new_user_session_path %>
+        <%= link_to "新規登録", new_user_registration_path %>
     <% end %>
-    <%= link_to "ログイン", new_user_session_path %>
-    <%= link_to "新規登録", new_user_registration_path %>
-    <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
-
     <%= paginate @game %>
 </div>

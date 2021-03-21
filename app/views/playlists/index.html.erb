@@ -5,7 +5,7 @@
 <div class="tweets-container">
   
   <% @playlists.each do |p| %>
-    <p class = "center mtop mbottom"><%= link_to p.content, playlist_path(p.id) %></p>
+    <p class = "center mtop mbottom"><%= link_to p.content, playlist_path(p.id),class: "whitewhite" %></p>
 
     
     <% p.games.first(3).each do |g| %>
@@ -15,15 +15,16 @@
     <hr>
   <% end %>
 
-    <%= link_to "プレイリスト作成へ", new_playlist_path %>
-    <%= link_to "game一覧へ", games_path %>
+    <%= link_to "プレイリスト作成へ", new_playlist_path,class: "whitewhite" %>
+    <%= link_to "game一覧へ", games_path,class: "whitewhite" %>
     
     <% if user_signed_in? %>
-        <%= link_to "マイページへ", user_path(current_user.id) %>
+        <%= link_to "マイページへ", user_path(current_user.id),class: "whitewhite" %>
+        <p><%= button_to 'ログアウト', destroy_user_session_path,class: "whitewhite", method: :delete %></p>
+
     <% end %>
 
-    <%= link_to "ログイン", new_user_session_path %>
-    <%= link_to "新規登録", new_user_registration_path %>
-    <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+    <p><%= link_to "ログイン", new_user_session_path,class: "whitewhite" %></p>
+    <p><%= link_to "新規登録", new_user_registration_path,class: "whitewhite" %></p>
 
 </div>
