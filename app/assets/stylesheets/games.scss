@@ -186,7 +186,7 @@ header{
     width: 70%;
     text-decoration-line:underline;
   }
-  //game
+  //app
   .doga1{
     font-weight: bold;
     font-size: 30px;
@@ -219,6 +219,31 @@ header{
     margin:0 0 5% 40vw;
     width: 50vw;
   }
+
+/*inputタグのチェックボックス非表示*/
+#input{
+  display: none;
+}
+ 
+.burg{
+  margin: 5% 0 0 85%;
+  height: 50px;
+}
+.gameguide{
+  font-size: 50px;
+}
+/*メニューのデザイン*/
+#content{
+    width: 200px;
+    height: 100%;
+  text-align: right;
+  transform: translateX(-100000px);
+}
+/*チェックが入ったら見せる*/
+#input:checked ~ #content{
+    transform: translatex(80%);
+}
+
 *{
   margin: 0;
   padding: 0;
