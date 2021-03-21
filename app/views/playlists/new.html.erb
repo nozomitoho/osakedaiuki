@@ -1,15 +1,17 @@
-<%= form_for @playlist do |f| %>
-
-    <p>プレイリスト名<%= f.text_field :content %></p>
-
-    <div class="field">
-    <%= f.label :games %><br />
-    <%= collection_check_boxes(:playlist, :game_ids, Game.all, :id, :title) do |b| %>
-      <%= b.label { b.check_box + b.text } %>
+<div class = playlist_new_body>
+  <h3 class = playlist_new_title_h3>New Playlist</h3>
+  <div class = "playlist_new_form_body">
+    <%= form_for @playlist do |f| %>
+      <div class = playlist_new_title_field><%= f.text_field :content, :placeholder => "Playlist Title" %></div>
+      <div class="playlist_check_field">
+       <p class = playlist_game_label>Games</p>
+        <%= collection_check_boxes(:playlist, :game_ids, Game.all, :id, :title) do |b| %>
+          <%= b.label { b.check_box + b.text } %>
+        <% end %>
+      </div>
+      <div class = submit_field>
+        <%= f.submit "プレイリストを作成" %>
+      </div>
     <% end %>
   </div>
-
-      
-    <%= f.submit %>
-  
-<% end %>
+</div>

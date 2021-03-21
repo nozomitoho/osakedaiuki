@@ -1,3 +1,54 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+*{
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 480px){
+  .games_new_title_h3{
+    position: relative;
+    padding-top: 30px;
+    color: #ffffff;
+  }
+
+  input{
+    width: 100px;
+  }
+  .games_new_body{
+    width: 345px;
+    height: 812px;
+    padding: 0 15px;
+    background-color: #333333;
+  }
+
+  .games_new_form_body{
+    padding: 10px 0;
+    margin-top: 30px;
+    height: 600px;
+    background-color: rgba(235, 235, 235, 0.7);;
+    input[type="submit"]{
+      position:relative;
+    }
+  }
+  .games_new_short_field{
+    margin: 20px auto;
+    width: 310px;
+    height: 50px;
+    input[type="text"]{
+      height:30px;
+    }
+  }
+
+  .games_new_long_field{
+    width: 310px;
+    height: 350px;
+    .games_new_text_field_back{
+    }
+    #game_body{
+      width: 250px;
+      height: 300px;
+    }
+  }
+}
