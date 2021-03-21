@@ -4,12 +4,12 @@
     <%= form_for @game do |f| %>
       <div class = games_new_short_field>
         <div>
-          <%= f.text_field :title, :placeholder => "Game Title"  %>
+          <%= f.text_field :title, :placeholder => "Game Title", class: "gameform"  %>
         </div
       </div>
       <div class = games_new_short_field>
         <div>
-          <%= f.text_field :youtube_url, :placeholder => "Youtube URL" %>
+          <%= f.text_field :youtube_url, :placeholder => "Youtube URL", class: "gameform" %>
         </div>
       </div>
       <div class = games_new_long_field>
