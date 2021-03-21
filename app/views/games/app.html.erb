@@ -1,0 +1,120 @@
+
+<div id="hamburg">
+<input id="input" type="checkbox">
+<div class="burg">
+  <label id="label1" for="input">
+    <i class="fas fa-times gameguide"></i>
+  </label>
+</div>
+<div id="content">
+  <div class="pathlink">
+    <%= link_to "Top", games_top_path, class: 'path' %>
+  </div>
+  <div class="pathlink">
+    <%= link_to "App", games_app_path, class: 'path' %>
+  </div>
+  <div class="pathlink">
+    <%= link_to "Music", games_path, class: 'path' %>
+  </div>
+  Play Lists
+    <% if user_signed_in? %> 
+      <div class="pathlink">
+        <%= link_to "My Page", user_path(current_user.id), class:'path' %>
+      </div>
+    <% else %>
+      <div class="pathlink">
+        <%= link_to 'Sign In', new_user_registration_path, class:"path" %>
+      </div>
+    <% end %> 
+</div>
+</div>
+<div class="game">
+<div class="doga1">
+  Hung over
+</div>
+<div class="doga2">
+  <video src="../../../assets/doga.mp4" loop autoplay muted  width="320" height="180" ></video>
+</div>
+<div class="con2">
+  <h5>
+    ある夢の世界に迷い込んでしまったあちすくん。
+    <br>
+    一刻も早く、Geekのみんなと飲みに行きたい!
+    <br><br>
+    飲みゲーをクリアしなければ現実世界に戻ることができず、みんなとの飲みの約束に間に合わない。
+    <br>
+    君ならどうする？？
+  </h5>
+  <h2>ゲーム概要</h2>
+  <h5>
+    広大な敷地の中に敵がいるが、
+    <br>
+    それに見つからないよう、ゲームエリアまで行き
+    <br>
+    3つ全てをクリアしなければいけない。
+    <br>
+    ライフはたった1つの、RPG×クイズゲームです。
+  </h5>
+</div>
+<div class="doga1">
+  Comming Soon...
+</div>
+<div class="game3">
+  <div class="doga3">
+    Other Games
+  </div>
+  <a href="https://apps.apple.com/jp/app/%E7%9A%86%E3%81%A7%E9%A3%B2%E3%82%80%E9%A3%B2%E3%82%80/id1540790142" target="_blank" class="game2" >
+    皆で飲む飲む
+  </a>
+</div>
+</div>
+
+<script>
+  $(function(){
+    
+    //マウスカーソルの変更
+    //=================================
+    //カーソル要素
+    var cursor=$("#cursor");
+    //mousemoveイベントでカーソル要素を移動
+    $(document).on("mousemove",function(e){
+      //マウス位置を取得するプロパティ
+      var x=e.clientX;
+      var y=e.clientY;
+      //カーソル要素のcssを書き換え。重複しなければtransformを使うのがおすすめ
+      cursor.css({
+        "opacity":"1",
+        "top":y+"px",
+        "left":x+"px"
+      });
+    });
+    
+    //aタグホバー
+    $("a").on({
+      "mouseenter": function() {
+        //activeクラス付与
+        cursor.addClass("active");
+      },
+      "mouseleave": function() {
+        cursor.removeClass("active");
+      }
+    });
+  });
+  (function() {
+    const image = document.querySelectorAll('.img-wrap');
+    
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.intersectionRatio > 0) {
+          entry.target.classList.add('img-animation');
+        } else {
+          entry.target.classList.remove('img-animation');
+        }
+      });
+    });
+    
+    Array.prototype.forEach.call(image, function(img) {
+      observer.observe(img);
+    });
+  })();
+</script>
