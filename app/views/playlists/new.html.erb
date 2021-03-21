@@ -1,0 +1,15 @@
+<%= form_for @playlist do |f| %>
+
+    <p>プレイリスト名<%= f.text_field :content %></p>
+
+    <div class="field">
+    <%= f.label :games %><br />
+    <%= collection_check_boxes(:playlist, :game_ids, Game.all, :id, :title) do |b| %>
+      <%= b.label { b.check_box + b.text } %>
+    <% end %>
+  </div>
+
+      
+    <%= f.submit %>
+  
+<% end %>

@@ -1,41 +1,101 @@
 <h1>osakedaisuki</h1>
-<h3>Tweet一覧</h3>
+<h3>曲(Game)一覧</h3>
+
 <h3>投稿を検索</h3>
 <%= form_tag({controller:"games",action:"index"}, method: :get) do %>
     <%= text_field_tag :search %>
     <%= submit_tag '検索する'  %>
 <% end %>
-<div class="tweets-container">
-    <% @game.each do |g| %>
+
+<%= link_to "game新規投稿", new_game_path %>
+<%= link_to "新規プレイリスト作成", new_playlist_path %>
+<%= link_to "プレイリスト一覧", playlists_path %>
+
+<hr>
+
+<h3>人気の曲Top3</h3>
+<% @rank_games.each do |g| %>
     <div class="tweet">
-        <%= link_to g.user.email , game_path(g.id)  %>
-        <%= g.title %>
-        <%= g.body %>
-        <% if user_signed_in? %>
-        <% if current_user.already_liked?(g) %>
-            <%= link_to game_like_path(id: g.id, game_id: g.id), method: :delete do %>
-                <i class="fas fa-heart"></i><%= g.likes.count %>
-            <% end %>
-        <% else %>
-            <%= link_to game_likes_path(id: g.id, game_id: g.id), method: :post do %>
+        <p><%= link_to g.user.email , game_path(g.id)  %></p>
+        <p><%= g.title %></p>
+        <p><%= g.body %></p>
+
+        #Youtube表示
+        <div><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= g.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+        #ユーザーがログインしていたらいいねできる。
+            <% if user_signed_in? %>
+                <% if current_user.already_liked?(g) %>
+                    <%= link_to game_like_path(id: g.id, game_id: g.id), method: :delete do %>
+                        <i class="fas fa-heart"></i><%= g.likes.count %>
+                    <% end %>
+                <% else %>
+                    <%= link_to game_likes_path(id: g.id, game_id: g.id), method: :post do %>
+                        <i class="far fa-heart"></i><%= g.likes.count %>
+                    <% end %>
+                <% end %>
+            <% else %>
                 <i class="far fa-heart"></i><%= g.likes.count %>
             <% end %>
-        <% end %>
-    <% else %>
-        <i class="far fa-heart"></i><%= g.likes.count %>
-    <% end %>
+        #いいねここまで
+
         <%= g.created_at %>
+
         <%= link_to "詳細へ", game_path(g.id) %>
         <%= link_to "編集する", edit_game_path(g.id) %>
         <%= button_to "削除する", game_path(g.id), method: :delete %>
+
     </div>
+<% end %>
+
+<hr>
+<h3>新規Game</h3>
+
+<div class="tweets-container">
+    <% @game.each do |g| %>
+        <div class="tweet">
+            <p><%= link_to g.user.email , game_path(g.id)  %></p>
+            <p><%= g.title %></p>
+            <p><%= g.body %></p>
+
+            #Youtube表示
+            <div><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= g.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+            #ユーザーがログインしていたらいいねできる。
+                <% if user_signed_in? %>
+                    <% if current_user.already_liked?(g) %>
+                        <%= link_to game_like_path(id: g.id, game_id: g.id), method: :delete do %>
+                            <i class="fas fa-heart"></i><%= g.likes.count %>
+                        <% end %>
+                    <% else %>
+                        <%= link_to game_likes_path(id: g.id, game_id: g.id), method: :post do %>
+                            <i class="far fa-heart"></i><%= g.likes.count %>
+                        <% end %>
+                    <% end %>
+                <% else %>
+                    <i class="far fa-heart"></i><%= g.likes.count %>
+                <% end %>
+            #いいねここまで
+
+            <%= g.created_at %>
+
+            <%= link_to "詳細へ", game_path(g.id) %>
+            <%= link_to "編集する", edit_game_path(g.id) %>
+            <%= button_to "削除する", game_path(g.id), method: :delete %>
+
+        </div>
+
     <% end %>
+
+    <hr>
+
+    #headerになりそう
     <% if user_signed_in? %>
         <%= link_to "マイページへ", user_path(current_user.id) %>　
     <% end %>
     <%= link_to "ログイン", new_user_session_path %>
     <%= link_to "新規登録", new_user_registration_path %>
     <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
-    <%= link_to "新規投稿", new_game_path %>
+
     <%= paginate @game %>
 </div>

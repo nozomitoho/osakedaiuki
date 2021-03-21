@@ -1,0 +1,32 @@
+<h1>プレイリスト編集</h1>
+<%= form_for @playlist do |f| %>
+
+    <p>プレイリスト名：<%= f.text_field :content %></p>
+
+    <div class="field">
+    
+        <%= collection_check_boxes(:playlist, :game_ids, Game.all, :id, :title) do |b| %>
+            <p><%= b.label { b.check_box + b.text } %></p>
+
+                
+        <% end %>
+    </div>
+    <%= f.submit %>
+<hr>
+
+    
+
+
+<h2>My Playlistの曲順変更はこちらより。</h2>
+    <% @playlist.playlistgames.each do |playlistgame| %>
+        <%= fields_for "playlistgames[]", playlistgame do |fi| %>
+          <%= playlistgame.game.title %>
+          <%= fi.select :rank, [[1,1], [2,2], [3,3], [4,4], [5,5], [6,6], [7,7], [8,8], [9,9], [10,10], [11,11], [12,12], [13,13], [14,14], [15,15], [16,16], [17,17], [18,18], [19,19], [20,20]], include_blank: "選択して下さい" %>
+          <p><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= playlistgame.game.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+        <% end %>
+    <% end %>
+
+
+    <%= f.submit %>
+  
+<% end %>

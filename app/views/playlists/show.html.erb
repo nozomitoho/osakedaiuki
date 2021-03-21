@@ -1,0 +1,74 @@
+<h1>osakedaisuki</h1>
+<h2>Playlist詳細</h2>
+<div class="playlist">
+  <h3><%= @playlist.content %></h3>
+  <p>作成日時：<%= @playlist.created_at %></p>
+
+  <p><%= link_to "プレイリストを編集する", edit_playlist_path(@playlist.id) %></p>
+
+
+
+<hr>
+
+<div class="tabs">
+    <input id="all" type="radio" name="tab_item" checked>
+    <label class="tab_item" for="all">My Playlist</label>
+    <input id="programming" type="radio" name="tab_item">
+    <label class="tab_item" for="programming">シャッフル</label>
+    <input id="design" type="radio" name="tab_item">
+    <label class="tab_item" for="design">追加順</label>
+
+    <div class="tab_content" id="all_content">
+        <div class="tab_content_description">
+            <% @games.each do |g| %>
+                <h4>飲み曲タイトル：<%= g.title %></h4>
+                <p>説明：<%= g.body %></p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= g.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <%= link_to playlist_playlistgame_path(@playlist, g), method: :delete do %>
+                    <p>プレイリストから削除</p>
+                <% end %>
+                
+                <hr>
+            <% end %>
+        </div>
+    </div>
+
+    <div class="tab_content" id="programming_content">
+        <div class="tab_content_description">
+            <% @randam_games.each do |g| %>
+                <h4>飲み曲タイトル：<%= g.title %></h4>
+                <p>説明：<%= g.body %></p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= g.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <%= link_to playlist_playlistgame_path(@playlist, g), method: :delete do %>
+                    <p>プレイリストから削除</p>
+                <% end %>
+                
+                <hr>
+            <% end %>
+        </div>
+    </div>
+
+    <div class="tab_content" id="design_content">
+        <div class="tab_content_description">
+            <% @randam_games2.each do |g| %>
+                <h4>飲み曲タイトル：<%= g.title %></h4>
+                <p>説明：<%= g.body %></p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= g.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <%= link_to playlist_playlistgame_path(@playlist, g), method: :delete do %>
+                    <p>プレイリストから削除</p>
+                <% end %>
+                
+                <hr>
+            <% end %>
+        </div>
+    </div>
+</div>
+
+
+<hr>
+
+  
+  <%= link_to "プレイリストを編集する", edit_playlist_path(@playlist.id) %>
+</div>
+
+<%= link_to "ホームに戻る", root_path %>
