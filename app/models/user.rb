@@ -7,6 +7,11 @@ class User < ApplicationRecord
 
   #nameは空だとダメ。かつ登録してある名前は新しく使えない。
   validates :name, presence: true, uniqueness: true, length: {maximum: 50}
+
+  
+    has_many :playlists, dependent: :destroy
+    has_many :plgames, through: :playlistgames, source: :game
+  
         
   #＜＜＜フォローまわり＞＞＞
       #フォローアソシエーション
@@ -14,6 +19,8 @@ class User < ApplicationRecord
       has_many :following, through: :following_relationships
       has_many :follower_relationships, foreign_key: "following_id", class_name: "Relationship", dependent: :destroy
       has_many :followers, through: :follower_relationships
+
+      has_many :playlistgames, through: :playlists, source: :game
 
       #フォローしているかを確認するメソッド
       def following?(user)
@@ -32,7 +39,7 @@ class User < ApplicationRecord
 
   #＜＜＜いいね＞＞＞
       has_many :games, dependent: :destroy
-      has_many :likes, dependent: :destroy, dependent: :destroy
+      has_many :likes, dependent: :destroy
       has_many :liked_games, through: :likes, source: :game, dependent: :destroy
 
       def already_liked?(game)

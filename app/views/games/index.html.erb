@@ -6,6 +6,15 @@
     <%= text_field_tag :search %>
     <%= submit_tag '検索する'  %>
 <% end %>
+<%= form_tag games_path, method: :get, class: 'boards__searchForm' do %>
+    <%= select_tag :tag_id,
+                options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]),
+                {
+                    prompt: 'タグで絞り込み検索',
+                    onchange: 'submit(this.form);'
+                }
+    %>
+<% end %>
 
 <%= link_to "game新規投稿", new_game_path %>
 <%= link_to "新規プレイリスト作成", new_playlist_path %>
@@ -40,6 +49,9 @@
         #いいねここまで
 
         <%= g.created_at %>
+        <% g.tags.each do |tag| %>
+            <%= tag.name %>
+        <% end %>  
 
         <%= link_to "詳細へ", game_path(g.id) %>
         <%= link_to "編集する", edit_game_path(g.id) %>
@@ -78,6 +90,9 @@
             #いいねここまで
 
             <%= g.created_at %>
+            <% g.tags.each do |tag| %>
+                <%= tag.name %>
+            <% end %>
 
             <%= link_to "詳細へ", game_path(g.id) %>
             <%= link_to "編集する", edit_game_path(g.id) %>

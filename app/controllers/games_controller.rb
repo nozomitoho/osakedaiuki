@@ -9,12 +9,24 @@ class GamesController < ApplicationController
     
     def index
         if params[:search] == nil
-            @game= Game.all.order(id: "DESC").page(params[:page]).per(3)
+            if params[:tag_id].present? 
+                @game = Tag.find(params[:tag_id]).games.order(id: "DESC").page(params[:page]).per(3)
+            else
+                @game= Game.all.order(id: "DESC").page(params[:page]).per(3)
+            end
         elsif params[:search] == ''
-            @game= Game.all.order(id: "DESC").page(params[:page]).per(3)
+            if params[:tag_id].present? 
+                @game = Tag.find(params[:tag_id]).game_tags.order(id: "DESC").page(params[:page]).per(3)
+            else
+                @game= Game.all.order(id: "DESC").page(params[:page]).per(3)
+            end
         else
+            if params[:tag_id].present?
+                @game = Game.where("body LIKE ? ",'%' + params[:search] + '%').page(params[:page]).per(3).and(Tag.find(params[:tag_id]).games).order(id: "DESC").page(params[:page]).per(3)
+            else
             #部分検索
-            @game = Game.where("body LIKE ? ",'%' + params[:search] + '%').page(params[:page]).per(3)
+                @game = Game.where("body LIKE ? ",'%' + params[:search] + '%').page(params[:page]).per(3)
+            end
         end
 
         #ランキング表示(3位まで)
@@ -72,6 +84,6 @@ class GamesController < ApplicationController
 
     private
     def game_params
-        params.require(:game).permit(:body, :title)
+        params.require(:game).permit(:body, :title, tag_ids: [])
     end
 end

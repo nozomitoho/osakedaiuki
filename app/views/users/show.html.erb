@@ -13,6 +13,14 @@
   <%= t.body %>
 <% end %>
 
+<h2>ユーザーのプレイリスト</h2>
+<% @user.playlists.each do |t| %>
+  <%= t.content %>
+  <% t.games.each do |u| %>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= u.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <% end %>
+<% end %>
+
 <!-- 以下はいいね機能を実装している場合-->
 <h2>ユーザーがいいねした投稿一覧</h2>
 <% @user.liked_games.each do |t| %>
