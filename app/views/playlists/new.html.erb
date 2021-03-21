@@ -6,7 +6,7 @@
       <div class="playlist_check_field">
        <p class = playlist_game_label>Games</p>
         <%= collection_check_boxes(:playlist, :game_ids, Game.all, :id, :title) do |b| %>
-          <%= b.label { b.check_box + b.text } %>
+          <span class="checkboxcolor"><%= b.label { b.check_box + b.text } %></span>
         <% end %>
       </div>
       <div class = submit_field>
@@ -14,4 +14,6 @@
       </div>
     <% end %>
   </div>
+
+  <p class="center mtop mbottom"><%= link_to "プレイリスト一覧へ", playlists_path,class: "whitewhite" %></p>
 </div>
