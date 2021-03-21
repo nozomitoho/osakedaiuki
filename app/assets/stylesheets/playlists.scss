@@ -1,3 +1,64 @@
 // Place all the styles related to the playlists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+*{
+    margin: 0;
+    padding: 0;
+ }
+ @media screen and (max-width: 480px){
+     .playlist_new_body{
+         background-color: #333333;
+         min-height: 792px;
+         width: 345px;
+         padding: 10px 15px;
+     }
+
+     .playlist_new_title_h3{
+        position: relative;
+        padding-top: 30px;
+        color: #ffffff;
+      }
+
+      .playlist_new_form_body{
+        padding: 10px 15px;
+        margin-top: 30px;
+        min-height: 600px;
+        background-color: rgba(235, 235, 235, 0.7);;
+        .playlist_new_title_field{
+            width: 300px;
+            margin: 0 auto;
+            input[type="text"]{
+                height:30px;
+                width: 300px;
+                border-radius: 5px;
+                border: none;
+                margin: 20px auto;
+            }
+        }
+        .submit_field{
+            margin: 10px auto;
+            display: flex;
+            justify-content: center;
+            input[type="submit"]{
+                border: none;
+                height: 25px;
+                width: 140px;
+                border-radius: 5px;
+              }
+        }
+        .playlist_check_field{
+            width: 280px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            .playlist_game_label{
+                color: #333333;
+            }
+            input[type="checkbox"]{
+                width: 10px;
+                margin-right: 10px;
+            }
+        }
+      }
+ }
