@@ -1,2 +1,153 @@
-<%= link_to "プレイリスト一覧(仮)", playlists_path %>
-<%= link_to "game一覧(仮)", games_path %>
+<script>
+  $(function(){
+    
+    //マウスカーソルの変更
+    //=================================
+    //カーソル要素
+    var cursor=$("#cursor");
+    //mousemoveイベントでカーソル要素を移動
+    $(document).on("mousemove",function(e){
+      //マウス位置を取得するプロパティ
+      var x=e.clientX;
+      var y=e.clientY;
+      //カーソル要素のcssを書き換え。重複しなければtransformを使うのがおすすめ
+      cursor.css({
+        "opacity":"1",
+        "top":y+"px",
+        "left":x+"px"
+      });
+    });
+    
+    //aタグホバー
+    $("a").on({
+      "mouseenter": function() {
+        //activeクラス付与
+        cursor.addClass("active");
+      },
+      "mouseleave": function() {
+        cursor.removeClass("active");
+      }
+    });
+  });
+  (function() {
+    const image = document.querySelectorAll('.img-wrap');
+    
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.intersectionRatio > 0) {
+          entry.target.classList.add('img-animation');
+        } else {
+          entry.target.classList.remove('img-animation');
+        }
+      });
+    });
+    
+    Array.prototype.forEach.call(image, function(img) {
+      observer.observe(img);
+    });
+  })();
+</script>
+​
+​
+<header class="header">
+  <div class="pathlink">
+    <%= link_to "Top", games_top_path, class: 'path' %>
+  </div>
+  <div class="pathlink">
+    <%= link_to "App", games_app_path, class: 'path' %>
+  </div>
+  <div class="pathlink">
+    <%= link_to "Music", games_path, class: 'path' %>
+  </div>
+  Play Lists
+  <% if user_signed_in? %> 
+    <div class="pathlink">
+      <%= link_to "My Page", user_path(current_user.id), class:'path' %>
+    </div>
+  <% else %>
+    <div class="pathlink">
+      <%= link_to 'Sign In', new_user_registration_path, class:"path" %>
+    </div>
+  <% end %> 
+</header>
+​
+<div class="top">
+  <div class="top1 img-wrap">
+    <div class="top1-1">
+      Nomikai Games
+    </div>
+  </div>
+​
+  <div class="top2 img-animation">
+  <div class="black">
+    <div class="con1">
+      新しい生活の一部に
+    </div>
+    <div class="con2">
+      世界的パンデミックを乗り越えた今、
+      <br><br>『新しい生活のカタチ』<br><br>
+      として友達や仲間とともに過ごす時間を大切にしたい、<br>そんな気持ちを応援します。
+    </div>
+    <div class="con2">
+      <div class="pathlink">
+        <%= link_to "App→", games_app_path, class:"path" %>
+      </div>
+    </div>
+  </div>
+  </div>
+​
+  <div class="top3 img-animation">
+    <div class="black">
+      <div class="con1">
+        音楽と仲間
+      </div>
+      <div class="con2">
+        我慢の末、久しぶりに会った仲間たちとともに<br>楽しい飲み会をしませんか？
+        <br><br>カラオケや宅飲みで使えるプレイリストはこちら
+      </div>
+      <div class="con4">
+        <div class="con2">
+          Play List→
+        </div>
+        <div class="con2">
+          <div class="pathlink">
+            <%= link_to "Music List→", games_path, class:"path" %>
+          </div>
+        </div>
+      </div>
+      <div class="foot">
+      <div class="foot2">
+        <div class="foot1">
+          <a href="https://geek-salon.com/" target="_blank" class="guide" >
+            <img src="../../../assets/geek.png", class="geek">
+          </a>
+        </div>
+        <div class="foot3">
+          <div class="foot4">
+            <div class="foot1">
+              <a href="https://www.facebook.com/geeksalon/">
+                <i class="fab fa-facebook-square guide"></i>
+              </a>
+              <a href="https://www.instagram.com/geeksalon/?hl=ja">
+                <i class="fab fa-instagram guide"></i>
+              </a>
+              <a href="https://twitter.com/geek_salon">
+                <i class="fab fa-twitter guide"></i>
+              </a>
+              <a href="https://www.youtube.com/channel/UCCq27jgsda3YYhbL7Z_qvZg">
+                <i class="fab fa-youtube guide"></i>
+              </a>
+            </div>
+            <div class="foot1">
+              <a href="https://geek-salon-products.com/" target="_blank" class="guide1" >
+                その他作品集はこちら
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+​
