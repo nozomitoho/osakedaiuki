@@ -1,35 +1,110 @@
-<h1>users#show</h1>
-<p>名前 : <%= @user.name %></p>
-<p>メールアドレス : <%= @user.email %></p>
+<h2 class="center mtop mbottom">マイページ</h2>
+<p class="center mtop mbottom">名前 : <%= @user.name %></p>
 
 <% if current_user.id == @user.id %>
-  <%= link_to "編集する", edit_user_registration_path %>
+  <p class="center mtop mbottom"><%= link_to "編集する", edit_user_registration_path,class: "whitewhite" %></p>
 <% end %>
 
-<h2>ユーザーの投稿一覧</h2>
-<% @user.games.each do |t| %>
+<br>
+
+<h3 class="center mtop mbottom">ユーザーの投稿一覧</h3>
+
+<hr>
+
+<% @user.games.each do |g| %>
   
-  <%= t.user.name %>
-  <%= t.body %>
+  <div class="tweet">
+  <p class="center mtop mbottom sp"><%= link_to g.user.email , game_path(g.id)  %></p>
+  <p class="center mtop mbottom sp">曲名：<%= g.title %></p>
+  <p class="center mtop mbottom sp">説明：<%= g.body %></p>
+
+  <p class="center mbottom sp"><iframe width="320" height="180" src="https://www.youtube.com/embed/<%= g.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+
+
+      <% if user_signed_in? %>
+          <% if current_user.already_liked?(g) %>
+              <%= link_to game_like_path(id: g.id, game_id: g.id), method: :delete do %>
+                  <i class="fas fa-heart"></i><%= g.likes.count %>
+              <% end %>
+          <% else %>
+              <%= link_to game_likes_path(id: g.id, game_id: g.id), method: :post do %>
+                  <i class="far fa-heart"></i><%= g.likes.count %>
+              <% end %>
+          <% end %>
+      <% else %>
+          <i class="far fa-heart"></i><%= g.likes.count %>
+      <% end %>
+
+
+
+  <% g.tags.each do |tag| %>
+      <%= tag.name %>
+  <% end %>  
+
+  <%= link_to "編集する", edit_game_path(g.id) %>
+  <%= button_to "削除する", game_path(g.id), method: :delete %>
+
+</div>
+
+
+
 <% end %>
 
-<h2>ユーザーのプレイリスト</h2>
-<% @user.playlists.each do |t| %>
-  <%= t.content %>
-  <% t.games.each do |u| %>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= u.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h3 class="center mtop mbottom">ユーザーのプレイリスト</h3>
+
+<hr>
+
+<% @user.playlists.each do |p| %>
+  <p class = "center mtop mbottom">〜<%= link_to p.content, playlist_path(p.id),class: "whitewhite" %>〜</p>
+
+    
+  <% p.games.first(3).each do |g| %>
+    <p class="center mbottom sp"><iframe width="320" height="180" src="https://www.youtube.com/embed/<%= g.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
   <% end %>
+
+  <hr>
 <% end %>
 
-<!-- 以下はいいね機能を実装している場合-->
-<h2>ユーザーがいいねした投稿一覧</h2>
-<% @user.liked_games.each do |t| %>
-  <%= t.user.name %>
-  <%= t.body %>
+
+<h3 class="center mtop mbottom">ユーザーがいいねした投稿一覧</h3>
+<% @user.liked_games.each do |g| %>
+  <div class="tweet">
+  <p class="center mtop mbottom sp"><%= link_to g.user.email , game_path(g.id)  %></p>
+  <p class="center mtop mbottom sp">曲名：<%= g.title %></p>
+  <p class="center mtop mbottom sp">説明：<%= g.body %></p>
+
+  <p class="center mbottom sp"><iframe width="320" height="180" src="https://www.youtube.com/embed/<%= g.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+
+
+      <% if user_signed_in? %>
+          <% if current_user.already_liked?(g) %>
+              <%= link_to game_like_path(id: g.id, game_id: g.id), method: :delete do %>
+                  <i class="fas fa-heart"></i><%= g.likes.count %>
+              <% end %>
+          <% else %>
+              <%= link_to game_likes_path(id: g.id, game_id: g.id), method: :post do %>
+                  <i class="far fa-heart"></i><%= g.likes.count %>
+              <% end %>
+          <% end %>
+      <% else %>
+          <i class="far fa-heart"></i><%= g.likes.count %>
+      <% end %>
+
+
+
+  <% g.tags.each do |tag| %>
+      <%= tag.name %>
+  <% end %>  
+
+  <%= link_to "編集する", edit_game_path(g.id) %>
+  <%= button_to "削除する", game_path(g.id), method: :delete %>
+
+</div>
+
 <% end %>
 
 <div>
 <%= render "follow_form" %>
 </div>
 
-<%= link_to "投稿一覧に戻る", games_path %>
+<p class="center mtop mbottom"><%= link_to "Topへ", root_path, class: "whitewhite" %></p>
