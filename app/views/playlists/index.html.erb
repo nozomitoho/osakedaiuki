@@ -12,7 +12,7 @@
 <div class="tweets-container">
   
   <% @playlists.each do |p| %>
-    <p class = "center mtop mbottom">〜<%= link_to p.content, playlist_path(p.id),class: "whitewhite" %>〜</p>
+    <h3 class = "center mtop mbottom">＜<%= link_to p.content, playlist_path(p.id),class: "whitewhite" %>＞</h3>
 
     
     <% p.games.first(3).each do |g| %>

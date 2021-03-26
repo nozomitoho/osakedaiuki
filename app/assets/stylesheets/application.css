@@ -255,9 +255,12 @@ input[name="tab_item"] {
   .foot{
     position: absolute;
     bottom: 0;
+    margin-bottom: 30px;
+
     background-color: rgba(177, 177, 177, 0.267);
     display: flex;
     width: 100%;
+
   }
   .foot4{
     width: 100%;
