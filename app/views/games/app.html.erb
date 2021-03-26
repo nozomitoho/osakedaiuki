@@ -1,34 +1,34 @@
 
 <div id="hamburg">
-<input id="input" type="checkbox">
-<div class="burg">
-  <label id="label1" for="input">
-    <i class="fas fa-times gameguide"></i>
-  </label>
-</div>
-<div id="content">
-  <div class="pathlink">
-    <%= link_to "Top", games_top_path, class: 'path' %>
+  <input id="input" type="checkbox">
+  <div class="burg">
+    <label id="label1" for="input">
+      <i class="fas fa-times gameguide"></i>
+    </label>
   </div>
-  <div class="pathlink">
-    <%= link_to "App", games_app_path, class: 'path' %>
+  <div id="content">
+    <div class="pathlink">
+      <%= link_to "Top", games_top_path, class: 'path' %>
+    </div>
+    <div class="pathlink">
+      <%= link_to "App", games_app_path, class: 'path' %>
+    </div>
+    <div class="pathlink">
+      <%= link_to "Music", games_path, class: 'path' %>
+    </div>
+    <div class="pathlink">
+      <%= link_to "Play Lists", playlists_path, class: 'path' %>
+    </div>
+      <% if user_signed_in? %> 
+        <div class="pathlink">
+          <%= link_to "My Page", user_path(current_user.id), class:'path' %>
+        </div>
+      <% else %>
+        <div class="pathlink">
+          <%= link_to 'Sign In', new_user_registration_path, class:"path" %>
+        </div>
+      <% end %> 
   </div>
-  <div class="pathlink">
-    <%= link_to "Music", games_path, class: 'path' %>
-  </div>
-  <div class="pathlink">
-    <%= link_to "Play Lists", playlists_path, class: 'path' %>
-  </div>
-    <% if user_signed_in? %> 
-      <div class="pathlink">
-        <%= link_to "My Page", user_path(current_user.id), class:'path' %>
-      </div>
-    <% else %>
-      <div class="pathlink">
-        <%= link_to 'Sign In', new_user_registration_path, class:"path" %>
-      </div>
-    <% end %> 
-</div>
 </div>
 
 <div class="game">

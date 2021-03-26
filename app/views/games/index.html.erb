@@ -1,3 +1,34 @@
+<div id="hamburg">
+  <input id="input" type="checkbox">
+  <div class="burg">
+    <label id="label1" for="input">
+      <i class="fas fa-times gameguide"></i>
+    </label>
+  </div>
+  <div id="content">
+    <div class="pathlink">
+      <%= link_to "Top", games_top_path, class: 'path' %>
+    </div>
+    <div class="pathlink">
+      <%= link_to "App", games_app_path, class: 'path' %>
+    </div>
+    <div class="pathlink">
+      <%= link_to "Music", games_path, class: 'path' %>
+    </div>
+    <div class="pathlink">
+      <%= link_to "Play Lists", playlists_path, class: 'path' %>
+    </div>
+      <% if user_signed_in? %> 
+        <div class="pathlink">
+          <%= link_to "My Page", user_path(current_user.id), class:'path' %>
+        </div>
+      <% else %>
+        <div class="pathlink">
+          <%= link_to 'Sign In', new_user_registration_path, class:"path" %>
+        </div>
+      <% end %> 
+  </div>
+</div>
 <h1 class="center sp mtop">曲(Game)一覧</h1>
 
 <h3 class="center mtop sp">投稿を検索</h3>
@@ -16,10 +47,9 @@
 <% end %>
 
 <hr>
-<p class="center mtop sp"><%= link_to "Topへ", root_path, class: "whitewhite" %></p>
+
 <p class="center mtop sp"><%= link_to "新規Game作成", new_game_path, class: "whitewhite" %></p>
-<p class="center mtop sp"><%= link_to "新規プレイリスト作成", new_playlist_path, class: "whitewhite" %></p>
-<p class="center mtop mbottom sp"><%= link_to "プレイリスト一覧", playlists_path, class: "whitewhite" %></p>
+<p class="center mtop sp mbottom"><%= link_to "新規プレイリスト作成", new_playlist_path, class: "whitewhite" %></p>
 
 <hr>
 

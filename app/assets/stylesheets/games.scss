@@ -225,8 +225,13 @@ header{
   display: none;
 }
  
+#hamburg{
+  height: 10px;
+}
+
 .burg{
-  margin: 5% 0 0 85%;
+  margin: 0 0 0 85%;
+  padding-top: 10px;
   height: 50px;
 }
 .gameguide{
@@ -242,6 +247,9 @@ header{
 /*チェックが入ったら見せる*/
 #input:checked ~ #content{
     transform: translatex(80%);
+    #hamburg{
+      height: 20px;
+    }
 }
 
 *{
@@ -254,6 +262,7 @@ header{
     position: relative;
     padding-top: 30px;
     color: #ffffff;
+    width: 300px;
   }
 
   .gameform{
