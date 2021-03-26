@@ -25,7 +25,7 @@ class PlaylistsController < ApplicationController
     def show
         @playlist = Playlist.find(params[:id])
         @games = @playlist.games.order(:rank)
-        @randam_games = @playlist.games.order("RAND()")
+        @randam_games = @playlist.games.order("RANDOM()")
         @randam_games2 = @playlist.games
     end
 
