@@ -1,20 +1,23 @@
 <h1 class="center sp mtop">プレイリスト編集</h1>
-<%= form_for @playlist do |f| %>
 
-    <p class="center sp">プレイリスト名：<%= f.text_field :content %></p>
-
-    <div class="field center sp">
-    
+<div class = "playlist_edit_form_body">
+    <%= form_for @playlist do |f| %>
+      <div class = playlist_new_title_field><%= f.text_field :content, :placeholder => "Playlist Title" %></div>
+      <div class="playlist_check_field">
+       <p class = playlist_game_label>Games</p>
         <%= collection_check_boxes(:playlist, :game_ids, Game.all, :id, :title) do |b| %>
-            <p><%= b.label { b.check_box + b.text } %></p>
-
-                
+          <span class="checkboxcolor"><%= b.label { b.check_box + b.text } %></span><br>
         <% end %>
-    </div>
-    <p class="center mbottom sp"><%= f.submit %></p>
-<hr>
+      </div>
+      <p class = submit_field>
+        <%= f.submit "プレイリストを編集" %>
+      </p>
 
-<h3 class="center mtop mbottom sp">My Playlistの曲順変更はこちらより。</h3>
+  </div>
+
+
+<br>
+<h3 class="center mtop mbottom sp">※My Playlistの曲順変更はこちら</h3>
 
     <% @playlist.playlistgames.each do |playlistgame| %>
         <%= fields_for "playlistgames[]", playlistgame do |fi| %>
@@ -26,8 +29,8 @@
     <% end %>
 
 
-    <p class="center mtop sp"><%= f.submit %></p>
+    <p class="center mtop sp"><%= f.submit "プレイリストを編集" %></p>
   
 <% end %>
 
-<h4 class="center mtop sp"><%= link_to "プレイリストに戻る", playlist_path(@playlist.id) %></h4>
+<h4 class="center mtop sp"><%= link_to "プレイリストに戻る", playlist_path(@playlist.id), class: "whitewhite" %></h4>

@@ -59,7 +59,9 @@
   <div class="pathlink">
     <%= link_to "Music", games_path, class: 'path' %>
   </div>
-  Play Lists
+  <div class="pathlink">
+    <%= link_to "Play Lists", playlists_path, class: 'path' %>
+  </div>
   <% if user_signed_in? %> 
     <div class="pathlink">
       <%= link_to "My Page", user_path(current_user.id), class:'path' %>

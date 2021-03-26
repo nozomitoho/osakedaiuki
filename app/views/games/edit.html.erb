@@ -1,5 +1,38 @@
-<%= form_for @game do |f| %>
-    <%= f.label :body %>
-    <%= f.text_field :body, :size => 140 %> 
-    <%= f.submit "編集する" %>
-  <% end %>
+<div class = "games_new_body">
+  <h3 class = games_new_title_h3>Edit Game</h3>
+  <div class = "games_new_form_body">
+    <%= form_for @game do |f| %>
+      <div class = "games_new_short_field center">
+        <p>Title</p>
+        <div>
+          <%= f.text_field :title, :placeholder => "Game Title", class: "gameform"  %>
+        </div
+      </div>
+      
+      <div class = "games_new_long_field mtop center">
+        <p>Explanation</p>
+        <div class = "games_new_text_field_back center">
+          <%= f.text_area :body, :placeholder => "Game Detail" %>
+        </div>
+      </div>
+      <div class="check_box">
+    <span>タグ</span>
+    <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+    <div>
+        <%= tag.label do %>
+        <%= tag.check_box %>
+        <%= tag.text %>
+      <% end %>
+    </div>
+    <% end %>
+    </div>
+      <div>
+        <%= f.submit "投稿する" %>
+      </div>
+    <% end %>
+  </div>
+
+
+
+</div>
+<p class="center mtop mbottom"><%= link_to "game一覧へ", games_path,class: "whitewhite" %></p>

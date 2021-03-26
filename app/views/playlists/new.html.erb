@@ -6,7 +6,7 @@
       <div class="playlist_check_field">
        <p class = playlist_game_label>Games</p>
         <%= collection_check_boxes(:playlist, :game_ids, Game.all, :id, :title) do |b| %>
-          <span class="checkboxcolor"><%= b.label { b.check_box + b.text } %></span>
+          <span class="checkboxcolor"><%= b.label { b.check_box + b.text } %></span><br>
         <% end %>
       </div>
       <div class = submit_field>

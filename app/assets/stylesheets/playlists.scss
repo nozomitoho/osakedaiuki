@@ -15,6 +15,52 @@
  }
 
  @media screen and (max-width: 480px){
+
+
+    .playlist_edit_form_body{
+        padding: 10px 15px;
+        margin-top: 30px;
+
+        background-color: rgba(235, 235, 235, 0.7);;
+        .playlist_new_title_field{
+            width: 300px;
+            margin: 0 auto;
+            input[type="text"]{
+                height:30px;
+                width: 300px;
+                border-radius: 5px;
+                border: none;
+                margin: 20px auto;
+            }
+        }
+
+        .submit_field{
+            margin: 10px auto;
+            display: flex;
+            justify-content: center;
+            input[type="submit"]{
+                border: none;
+                height: 25px;
+                width: 140px;
+                border-radius: 5px;
+              }
+        }
+        .playlist_check_field{
+            width: 280px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            .playlist_game_label{
+                color: #333333;
+            }
+            input[type="checkbox"]{
+                width: 10px;
+                margin-right: 10px;
+            }
+        }
+    }
+
      .playlist_new_body{
          background-color: #333333;
          min-height: 792px;
@@ -44,6 +90,9 @@
                 margin: 20px auto;
             }
         }
+
+        
+
         .submit_field{
             margin: 10px auto;
             display: flex;

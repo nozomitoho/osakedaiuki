@@ -2,13 +2,19 @@
 <h1 class = "center mtop mbottom" >Playlist詳細</h1>
 <div class="playlist">
   <h2 class = "center mtop mbottom"><%= @playlist.content %></h2>
+  <br>
+
+  <p class = "center mtop mbottom" ><%= link_to "ホームに戻る", root_path, class: "whitewhite" %></p>
+  <p class = "center mtop mbottom" ><%= link_to "プレイリスト一覧へ戻る", playlists_path, class: "whitewhite" %></p>
 
 
+<% if user_signed_in? %>
   <% if current_user.id == @playlist.user_id %>
-    <p class = "center mtop mbottom" ><%= link_to "プレイリストを編集する", edit_playlist_path(@playlist.id) %></p>
+    <p class = "center mtop mbottom" ><%= link_to "プレイリストを編集する", edit_playlist_path(@playlist.id), class: "whitewhite" %></p>
   <% end %>
 
-
+<% end %>
+<br>
 <hr>
 
 <div class="tabs sptabs">
@@ -25,8 +31,12 @@
                 <h4 class = "center mtop mbottom" >飲み曲タイトル：<%= g.title %></h4>
                 <p class = "center mtop mbottom" >説明：<%= g.body %></p>
                 <iframe width="320" height="180" src="https://www.youtube.com/embed/<%= g.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <%= link_to playlist_playlistgame_path(@playlist, g), method: :delete do %>
-                    <p class = "center mtop mbottom" >プレイリストから削除</p>
+                <% if user_signed_in? %>
+                    <% if current_user.id == @playlist.user_id %>  
+                        <%= link_to playlist_playlistgame_path(@playlist, g), method: :delete do %>
+                            <p class = "center mtop mbottom" >プレイリストから削除</p>
+                        <% end %>
+                    <% end %>
                 <% end %>
                 
                 <hr>
@@ -40,8 +50,12 @@
                 <h4 class = "center mtop mbottom" >飲み曲タイトル：<%= g.title %></h4>
                 <p class = "center mtop mbottom" >説明：<%= g.body %></p>
                 <iframe width="320" height="180" src="https://www.youtube.com/embed/<%= g.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <%= link_to playlist_playlistgame_path(@playlist, g), method: :delete do %>
-                    <p class = "center mtop mbottom" >プレイリストから削除</p>
+                <% if user_signed_in? %>
+                    <% if current_user.id == @playlist.user_id %>  
+                        <%= link_to playlist_playlistgame_path(@playlist, g), method: :delete do %>
+                            <p class = "center mtop mbottom" >プレイリストから削除</p>
+                        <% end %>
+                    <% end %>
                 <% end %>
                 
                 <hr>
@@ -55,10 +69,14 @@
                 <h4 class = "center mtop mbottom" >飲み曲タイトル：<%= g.title %></h4>
                 <p class = "center mtop mbottom" >説明：<%= g.body %></p>
                 <iframe width="320" height="180" src="https://www.youtube.com/embed/<%= g.youtube_url %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <%= link_to playlist_playlistgame_path(@playlist, g), method: :delete do %>
-                    <p class = "center mtop mbottom" >プレイリストから削除</p>
+               
+                <% if user_signed_in? %>
+                    <% if current_user.id == @playlist.user_id %>  
+                        <%= link_to playlist_playlistgame_path(@playlist, g), method: :delete do %>
+                            <p class = "center mtop mbottom" >プレイリストから削除</p>
+                        <% end %>
+                    <% end %>
                 <% end %>
-                
                 <hr>
             <% end %>
         </div>
@@ -68,10 +86,13 @@
 
 <hr>
 
-  
+<% if user_signed_in? %>
   <% if current_user.id == @playlist.user_id %>   
-    <p class = "center mtop mbottom" ><%= link_to "プレイリストを編集する", edit_playlist_path(@playlist.id) %></p>
+    <p class = "center mtop mbottom" ><%= link_to "プレイリストを編集する", edit_playlist_path(@playlist.id), class: "whitewhite" %></p>
   <% end %>
+<% end %>
+
 </div>
 
-<p class = "center mtop mbottom" ><%= link_to "ホームに戻る", root_path %></p>
+<p class = "center mtop mbottom" ><%= link_to "プレイリスト一覧へ戻る", playlists_path, class: "whitewhite" %></p>
+<p class = "center mtop mbottom" ><%= link_to "ホームに戻る", root_path, class: "whitewhite" %></p>

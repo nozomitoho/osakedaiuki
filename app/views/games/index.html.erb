@@ -16,7 +16,8 @@
 <% end %>
 
 <hr>
-<p class="center mtop sp"><%= link_to "game新規投稿", new_game_path, class: "whitewhite" %></p>
+<p class="center mtop sp"><%= link_to "Topへ", root_path, class: "whitewhite" %></p>
+<p class="center mtop sp"><%= link_to "新規Game作成", new_game_path, class: "whitewhite" %></p>
 <p class="center mtop sp"><%= link_to "新規プレイリスト作成", new_playlist_path, class: "whitewhite" %></p>
 <p class="center mtop mbottom sp"><%= link_to "プレイリスト一覧", playlists_path, class: "whitewhite" %></p>
 
@@ -52,7 +53,6 @@
             <%= tag.name %>
         <% end %>  
 
-        <%= link_to "詳細へ", game_path(g.id) %>
         <%= link_to "編集する", edit_game_path(g.id) %>
         <%= button_to "削除する", game_path(g.id), method: :delete %>
 
@@ -93,7 +93,6 @@
                 <%= tag.name %>
             <% end %>
 
-            <%= link_to "詳細へ", game_path(g.id) %>
             <%= link_to "編集する", edit_game_path(g.id) %>
             <%= button_to "削除する", game_path(g.id), method: :delete %>
 
@@ -103,13 +102,16 @@
 
     <hr>
 
+<div class="mtop"><%= paginate @game %></div>
 
-    <% if user_signed_in? %>
-        <%= link_to "マイページへ", user_path(current_user.id) %>　
-        <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
-    <% else %>
-        <%= link_to "ログイン", new_user_session_path %>
-        <%= link_to "新規登録", new_user_registration_path %>
-    <% end %>
-    <%= paginate @game %>
+<p class="mtop"></p>
+
+<% if user_signed_in? %>
+    <%= link_to "マイページへ", user_path(current_user.id) %>　
+    <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+<% else %>
+    <%= link_to "ログイン", new_user_session_path %>
+    <%= link_to "新規登録", new_user_registration_path %>
+<% end %>
+  
 </div>

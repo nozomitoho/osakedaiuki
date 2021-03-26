@@ -1,11 +1,18 @@
 <h1 class = "center mtop mbottom" >Playlist一覧</h1>
 <h3 class = "center mtop mbottom" >(最大3曲まで表示)</h3>
 
+<hr>
+
+  <p class="center mtop sp"><%= link_to "Topへ", root_path, class: "whitewhite" %></p>
+  <p class="center mtop mbottom sp"><%= link_to "新規プレイリスト作成", new_playlist_path, class: "whitewhite" %></p>
+  <p class="center mtop mbottom sp"><%= link_to "game一覧へ", games_path,class: "whitewhite" %></p>
+  
+<hr>
 
 <div class="tweets-container">
   
   <% @playlists.each do |p| %>
-    <p class = "center mtop mbottom"><%= link_to p.content, playlist_path(p.id),class: "whitewhite" %></p>
+    <p class = "center mtop mbottom">〜<%= link_to p.content, playlist_path(p.id),class: "whitewhite" %>〜</p>
 
     
     <% p.games.first(3).each do |g| %>
@@ -15,16 +22,14 @@
     <hr>
   <% end %>
 
-    <%= link_to "プレイリスト作成へ", new_playlist_path,class: "whitewhite" %>
-    <%= link_to "game一覧へ", games_path,class: "whitewhite" %>
+    <p class="center mtop sp"><%= link_to "新規プレイリスト作成", new_playlist_path,class: "whitewhite" %></p>
+    <p class="center mtop mbottom sp"><%= link_to "game一覧へ", games_path,class: "whitewhite" %></p>
     
     <% if user_signed_in? %>
-        <%= link_to "マイページへ", user_path(current_user.id),class: "whitewhite" %>
-        <p><%= button_to 'ログアウト', destroy_user_session_path,class: "whitewhite", method: :delete %></p>
-
+        <p class="center mtop mbottom sp"><%= link_to "マイページへ", user_path(current_user.id),class: "whitewhite" %>
+    <% else %>
+      <p class="center mtop mbottom sp"><%= link_to "ログイン", new_user_session_path,class: "whitewhite" %></p>
+      <p class="center mtop mbottom sp"><%= link_to "新規登録", new_user_registration_path,class: "whitewhite" %></p>
     <% end %>
-
-    <p><%= link_to "ログイン", new_user_session_path,class: "whitewhite" %></p>
-    <p><%= link_to "新規登録", new_user_registration_path,class: "whitewhite" %></p>
 
 </div>
